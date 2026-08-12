@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariel Angelo Kolawolé HOUNKPATIN — Ingénieur Statisticien Économiste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0d1210;
+  --ink-900:#131a17;
+  --ink-800:#1b2420;
+  --em-600:#0e9d6b;
+  --em-500:#14b57e;
+  --em-400:#4fd6a4;
+  --em-100:#e2f7ee;
+  --paper:#f5f7f6;
+  --white:#ffffff;
+  --text-900:#12161a;
+  --text-600:#4b555c;
+  --text-400:#828d92;
+  --line:#e2e6e3;
+  --radius-lg:18px;
+  --radius-md:10px;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-size:17px;color:var(--text-900);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-0.02em;}
+.mono{font-family:'JetBrains Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+@media(max-width:600px){.wrap{padding:0 20px;}}
+section{padding:96px 0;}
+@media(max-width:720px){section{padding:60px 0;}}
+
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--em-600);font-weight:700;margin-bottom:18px;}
+.eyebrow .n{color:var(--text-400);}
+
+/* NAV */
+header.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;}
+.brand .mark{width:26px;height:26px;border-radius:7px;background:var(--ink-950);display:flex;align-items:center;justify-content:center;color:var(--em-400);font-size:.72rem;font-weight:800;}
+.nav-links{display:flex;gap:28px;font-size:.96rem;font-weight:600;color:var(--text-600);}
+.nav-links a{position:relative;padding-bottom:3px;}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--em-600);transition:width .25s;}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{font-size:.82rem;font-weight:700;background:var(--ink-950);color:var(--white);padding:11px 20px;border-radius:9px;transition:background .2s;}
+.nav-cta:hover{background:var(--em-600);}
+.nav-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;}
+@media(max-width:860px){
+  .nav-links{position:fixed;top:64px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:transform .3s;}
+  .nav-links.open{transform:translateY(0);}
+  .nav-toggle{display:block;}
+  .nav-cta{display:none;}
+}
+
+/* HERO */
+.hero{background:linear-gradient(180deg,var(--paper),var(--white));border-bottom:1px solid var(--line);padding-top:72px;padding-bottom:0;}
+.hero-top{display:grid;grid-template-columns:1.3fr 0.7fr;gap:50px;align-items:end;padding-bottom:56px;}
+@media(max-width:900px){.hero-top{grid-template-columns:1fr;gap:28px;}}
+.hero-top h1{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.05;color:var(--text-900);}
+.hero-top h1 .accent{color:var(--em-600);}
+.hero-pitch{color:var(--text-600);font-size:1.14rem;margin-top:20px;max-width:500px;}
+.hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:9px;font-weight:700;font-size:.9rem;cursor:pointer;border:1px solid transparent;transition:all .2s;}
+.btn-primary{background:var(--ink-950);color:var(--white);}
+.btn-primary:hover{background:var(--em-600);}
+.btn-outline{border-color:var(--line);color:var(--text-900);background:var(--white);}
+.btn-outline:hover{border-color:var(--em-500);color:var(--em-600);}
+.hero-meta{text-align:right;color:var(--text-600);font-size:.98rem;}
+@media(max-width:900px){.hero-meta{text-align:left;}}
+.hero-meta div{margin-bottom:6px;display:flex;gap:8px;align-items:center;justify-content:flex-end;}
+@media(max-width:900px){.hero-meta div{justify-content:flex-start;}}
+.hero-meta svg{width:14px;height:14px;stroke:var(--em-600);}
+
+/* bento stat grid */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);}
+@media(max-width:760px){.bento{grid-template-columns:repeat(2,1fr);}}
+.bento-cell{padding:28px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+.bento-cell:nth-child(4n){border-right:none;}
+@media(max-width:760px){.bento-cell:nth-child(2n){border-right:none;}.bento-cell:nth-child(4n){border-right:1px solid var(--line);}}
+.bento-cell .num{font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;color:var(--text-900);}
+.bento-cell .num span{color:var(--em-600);}
+.bento-cell .lbl{font-size:.92rem;color:var(--text-400);margin-top:8px;}
+
+/* SECTION HEADS */
+.sec-head{max-width:620px;margin-bottom:48px;}
+.sec-head h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text-900);}
+.sec-head p{color:var(--text-600);margin-top:10px;font-size:1.08rem;}
+
+/* PROFIL */
+.profil-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;}
+@media(max-width:840px){.profil-grid{grid-template-columns:1fr;gap:32px;}}
+.profil-grid p{color:var(--text-600);margin-bottom:16px;font-size:1.08rem;}
+.profil-lead{font-size:1.55rem;color:var(--text-900);font-weight:700;margin-bottom:22px;line-height:1.42;}
+.kv-table{border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
+.kv-row{display:flex;justify-content:space-between;padding:15px 20px;border-bottom:1px solid var(--line);font-size:.98rem;}
+.kv-row:last-child{border-bottom:none;}
+.kv-row .k{color:var(--text-400);}
+.kv-row .v{color:var(--text-900);font-weight:600;text-align:right;}
+.kv-row .v a:hover{color:var(--em-600);}
+
+/* COMPETENCES bento */
+.competences{background:var(--paper);}
+.comp-bento{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;}
+@media(max-width:900px){.comp-bento{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.comp-bento{grid-template-columns:1fr;}}
+.comp-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;transition:transform .22s,box-shadow .22s;}
+.comp-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px -22px rgba(10,20,15,0.22);}
+.comp-card.big{grid-row:span 2;background:var(--ink-950);color:var(--white);}
+.comp-card.big h4{color:var(--white);}
+.comp-card.big .tag{border-color:rgba(255,255,255,0.16);color:var(--em-400);background:rgba(255,255,255,0.04);}
+.comp-icon{width:38px;height:38px;border-radius:9px;background:var(--em-100);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.comp-card.big .comp-icon{background:rgba(79,214,164,0.12);}
+.comp-icon svg{width:18px;height:18px;stroke:var(--em-600);}
+.comp-card.big .comp-icon svg{stroke:var(--em-400);}
+.comp-card h4{font-size:1.34rem;margin-bottom:14px;font-weight:700;}
+.comp-card p{font-size:1rem;color:var(--text-600);margin-bottom:16px;}
+.comp-card.big p{color:#b9c4bf;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;}
+.tag{font-size:.84rem;font-family:'JetBrains Mono',monospace;background:var(--paper);color:var(--text-600);padding:5px 10px;border-radius:6px;border:1px solid var(--line);}
+.comp-card.big .tag{color:var(--em-400);}
+
+/* PARCOURS toggle */
+.tabbar{display:flex;gap:6px;border:1px solid var(--line);border-radius:100px;padding:4px;width:fit-content;margin-bottom:40px;}
+.tab-btn{font-size:.96rem;font-weight:700;padding:10px 22px;border-radius:100px;background:transparent;border:none;color:var(--text-600);cursor:pointer;transition:all .2s;}
+.tab-btn.active{background:var(--ink-950);color:var(--white);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.timeline{position:relative;padding-left:34px;}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);}
+.tl-item{position:relative;padding-bottom:26px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:"";position:absolute;left:-34px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--em-600);box-shadow:0 0 0 4px var(--em-100);z-index:2;}
+.tl-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 28px;transition:transform .22s,box-shadow .22s,border-color .22s;}
+.tl-card:hover{transform:translateY(-3px);box-shadow:0 20px 36px -24px rgba(10,20,15,0.22);border-color:var(--em-400);}
+.tl-date-pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.84rem;font-weight:700;color:var(--em-600);background:var(--em-100);padding:6px 14px;border-radius:100px;margin-bottom:14px;}
+.tl-card h4{font-size:1.2rem;margin-bottom:5px;font-weight:700;}
+.tl-card .school{color:var(--text-400);font-size:.98rem;margin-bottom:14px;font-weight:500;}
+.tl-card ul{padding-left:18px;color:var(--text-600);font-size:1rem;}
+.tl-card ul li{margin-bottom:6px;}
+.tl-card p.desc{color:var(--text-600);font-size:1.02rem;max-width:620px;}
+.badge{display:inline-block;font-size:.8rem;font-weight:700;background:var(--em-100);color:var(--em-600);padding:5px 12px;border-radius:100px;margin-left:8px;vertical-align:middle;}
+
+/* PROMO BLOCK — évolution de carrière */
+.promo-block{background:var(--ink-950);border-radius:24px;padding:40px 38px;margin-bottom:24px;position:relative;overflow:hidden;}
+.promo-block::before{content:"";position:absolute;top:-40%;right:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(20,181,126,0.18),transparent 70%);}
+.promo-head{position:relative;z-index:2;margin-bottom:32px;}
+.promo-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--em-400);background:rgba(79,214,164,0.12);padding:6px 14px;border-radius:100px;margin-bottom:16px;}
+.promo-head h4{font-size:1.5rem;color:#fff;margin-bottom:10px;}
+.promo-head h4 .dot{color:var(--em-400);}
+.promo-head p{color:#a9b8b2;font-size:1.04rem;max-width:520px;}
+.promo-steps{position:relative;z-index:2;display:flex;align-items:stretch;gap:18px;margin-bottom:28px;}
+@media(max-width:760px){.promo-steps{flex-direction:column;}}
+.promo-step{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px;position:relative;}
+.promo-step.current{background:rgba(79,214,164,0.08);border-color:rgba(79,214,164,0.4);}
+.ps-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;color:var(--ink-950);background:var(--em-400);padding:4px 11px;border-radius:100px;margin-bottom:12px;}
+.ps-date{font-family:'JetBrains Mono',monospace;font-size:.84rem;color:var(--em-400);font-weight:600;margin-bottom:8px;}
+.ps-role{font-family:'Sora',sans-serif;font-weight:700;font-size:1.14rem;color:#fff;margin-bottom:8px;}
+.ps-desc{color:#a9b8b2;font-size:.94rem;line-height:1.5;}
+.promo-arrow{display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--em-400);}
+.promo-arrow svg{width:26px;height:26px;}
+@media(max-width:760px){.promo-arrow{transform:rotate(90deg);margin:-6px auto;}}
+.promo-tags{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:9px;}
+.promo-tags .tag{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.14);color:#c7d4cf;}
+
+.stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:700px){.stage-grid{grid-template-columns:1fr;}}
+.stage-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .22s,box-shadow .22s;}
+.stage-card:hover{transform:translateY(-4px);box-shadow:0 20px 36px -24px rgba(10,20,15,0.22);}
+.stage-icon{width:38px;height:38px;border-radius:9px;background:var(--em-100);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.stage-icon svg{width:18px;height:18px;stroke:var(--em-600);}
+.stage-date{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--em-600);font-weight:700;margin-bottom:10px;}
+.stage-card h4{font-size:1.1rem;margin-bottom:4px;font-weight:700;}
+.stage-card .school{color:var(--text-400);font-size:.92rem;margin-bottom:12px;}
+.stage-card p{color:var(--text-600);font-size:.96rem;}
+
+/* CERTIFICATIONS index list */
+.certifications{background:var(--ink-950);color:var(--white);}
+.certifications .eyebrow{color:var(--em-400);}
+.certifications .eyebrow .n{color:#5c6a63;}
+.certifications .sec-head h2{color:var(--white);}
+.certifications .sec-head p{color:#9fb0a8;}
+.cert-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+.filter-btn{font-family:'JetBrains Mono',monospace;font-size:.86rem;padding:9px 18px;border-radius:100px;border:1px solid rgba(255,255,255,0.14);background:transparent;color:#9fb0a8;cursor:pointer;transition:all .2s;}
+.filter-btn.active,.filter-btn:hover{background:var(--em-600);border-color:var(--em-600);color:var(--white);}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:920px){.cert-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.cert-grid{grid-template-columns:1fr;}}
+.cert-card{background:var(--white);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .22s,box-shadow .22s;}
+.cert-card:hover{transform:translateY(-5px);box-shadow:0 24px 44px -22px rgba(0,0,0,0.45);}
+.cert-card .c-cat{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-950);background:var(--em-400);padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.cert-card h4{font-size:1.2rem;color:var(--ink-950);margin-bottom:10px;line-height:1.32;font-weight:700;}
+.cert-card .c-org{font-size:.94rem;color:#5b6560;margin-bottom:18px;font-weight:500;}
+.cert-card .foot{display:flex;justify-content:space-between;align-items:center;font-size:.84rem;border-top:1px solid #ececea;padding-top:14px;}
+.cert-card .c-date{color:#8a938e;font-weight:600;}
+.cert-card .c-verify{color:var(--em-600);font-weight:700;}
+.cert-card .c-verify:hover{text-decoration:underline;}
+
+/* PROJETS */
+.projets{background:var(--white);}
+.proj-feature{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;margin-bottom:20px;transition:box-shadow .25s;}
+.proj-feature:hover{box-shadow:0 24px 44px -28px rgba(10,20,15,0.25);}
+@media(max-width:800px){.proj-feature{grid-template-columns:1fr;}}
+.pf-visual{background:linear-gradient(150deg,var(--ink-900),var(--ink-950));padding:36px;display:flex;flex-direction:column;justify-content:center;color:#fff;}
+.pf-visual .flabel{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--em-400);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+.pf-visual svg{width:60px;height:60px;stroke:var(--em-400);margin-bottom:16px;}
+.pf-visual h3{font-size:1.4rem;color:#fff;}
+.pf-body{padding:32px;}
+.pf-body .mod{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--em-600);background:var(--em-100);padding:5px 12px;border-radius:100px;display:inline-block;margin-bottom:14px;}
+.pf-body p{color:var(--text-600);font-size:1.05rem;margin-bottom:18px;}
+.pf-stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:18px;}
+.pf-stat b{display:block;font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--em-600);}
+.pf-stat span{font-size:.86rem;color:var(--text-400);}
+
+.proj-secondary{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:700px){.proj-secondary{grid-template-columns:1fr;}}
+.ps-card{border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;transition:transform .22s,box-shadow .22s;}
+.ps-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px -22px rgba(10,20,15,0.22);}
+.ps-card .mod{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--em-600);background:var(--em-100);padding:4px 11px;border-radius:100px;display:inline-block;margin-bottom:14px;}
+.ps-card h3{font-size:1.2rem;margin-bottom:10px;}
+.ps-card p{color:var(--text-600);font-size:1rem;margin-bottom:16px;}
+.code-link{display:inline-flex;align-items:center;gap:7px;font-size:.9rem;font-weight:700;color:var(--ink-950);background:var(--em-400);padding:9px 16px;border-radius:9px;transition:all .2s;margin-top:4px;}
+.code-link:hover{background:var(--em-600);color:var(--white);transform:translateY(-2px);}
+.code-link svg{width:15px;height:15px;stroke:currentColor;}
+.pf-body .code-link{margin-top:4px;}
+.ps-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+
+/* CONTACT */
+.contact{background:var(--paper);text-align:center;}
+.contact h2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:14px;}
+.contact p{color:var(--text-600);max-width:520px;margin:0 auto 32px;}
+.contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.contact-card{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--line);padding:15px 24px;border-radius:9px;font-size:1rem;font-weight:600;transition:all .2s;}
+.contact-card:hover{border-color:var(--em-500);color:var(--em-600);transform:translateY(-2px);}
+.contact-card svg{width:16px;height:16px;stroke:var(--em-600);}
+
+footer{background:var(--ink-950);color:#6b7873;padding:24px 0;}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.8rem;}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.show{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="mark">AH</span>HOUNKPATIN</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#profil">Profil</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#projets">Projets</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Me contacter</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="reveal">
+        <h1>Ingénieur Statisticien Économiste — <span class="accent">de la donnée à la décision.</span></h1>
+        <p class="hero-pitch">Ariel Angelo Kolawolé HOUNKPATIN. Formation ISE à l'ENEAM, deux ans d'expérience en pilotage de performance, et un socle solide en économétrie, suivi-évaluation et data analytics.</p>
+        <div class="hero-cta">
+          <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+          <a href="#parcours" class="btn btn-outline">Mon parcours</a>
+        </div>
+      </div>
+      <div class="hero-meta reveal">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Cotonou, Bénin</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>arielhounkpatin@gmail.com</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+229 52 11 23 72</div>
+      </div>
+    </div>
+    <div class="bento reveal">
+      <div class="bento-cell"><div class="num"><span>16,47</span>/20</div><div class="lbl">Licence PGP — Mention Très Bien</div></div>
+      <div class="bento-cell"><div class="num"><span>2</span> ans</div><div class="lbl">Expérience professionnelle</div></div>
+      <div class="bento-cell"><div class="num"><span>19</span>+</div><div class="lbl">Certifications obtenues</div></div>
+      <div class="bento-cell"><div class="num"><span>3</span></div><div class="lbl">Projets académiques</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFIL -->
+<section id="profil">
+  <div class="wrap profil-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="n">01</span> Profil</div>
+      <p class="profil-lead">Diplômé en Planification et Gestion des Projets, aujourd'hui en cycle Ingénieur Statisticien Économiste — un profil qui allie rigueur analytique et expérience opérationnelle.</p>
+      <p>Deux ans d'expérience chez ILYINE Paris en coordination de projets, pilotage de la performance et support stratégique m'ont appris à structurer l'information pour la décision. Je poursuis aujourd'hui cette trajectoire en cycle ISE à l'ENEAM, avec un intérêt marqué pour l'économétrie, le suivi-évaluation et l'économie du développement.</p>
+      <p>Je complète en continu ce socle par des certifications en data analytics et en statistique appliquée, en vue d'une candidature en master à l'horizon 2028.</p>
+    </div>
+    <div class="reveal">
+      <div class="kv-table">
+        <div class="kv-row"><span class="k">Cycle actuel</span><span class="v">ISE — ENEAM</span></div>
+        <div class="kv-row"><span class="k">Licence</span><span class="v">PGP — 16,47/20</span></div>
+        <div class="kv-row"><span class="k">Langues</span><span class="v">Français (natif), Anglais (B2)</span></div>
+        <div class="kv-row"><span class="k">Localisation</span><span class="v">Cotonou, Bénin</span></div>
+        <div class="kv-row"><span class="k">LinkedIn</span><span class="v"><a href="https://linkedin.com/in/ariel-hounkpatin" target="_blank" rel="noopener">ariel-hounkpatin ↗</a></span></div>
+        <div class="kv-row"><span class="k">Disponibilité</span><span class="v">Stages &amp; collaborations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES bento -->
+<section class="competences" id="competences">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">02</span> Expertise</div>
+      <h2>Compétences</h2>
+      <p>Une double compétence : rigueur statistique et sens opérationnel de la performance.</p>
+    </div>
+    <div class="comp-bento">
+      <div class="comp-card big reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg></div>
+        <h4>Statistique &amp; Économétrie</h4>
+        <p>Analyse descriptive et inférentielle, tests d'hypothèses, régression simple et multivariée, traitement de bases de données complexes.</p>
+        <div class="tags"><span class="tag">STATA</span><span class="tag">SPSS</span><span class="tag">R</span><span class="tag">Sondages</span><span class="tag">EMET</span></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <h4>Gestion de projet &amp; Performance</h4>
+        <div class="tags"><span class="tag">GAR</span><span class="tag">KPI &amp; Reporting</span><span class="tag">CRM</span></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg></div>
+        <h4>Data &amp; Programmation</h4>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL / Access</span><span class="tag">ML</span></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h4>Suivi-Évaluation</h4>
+        <div class="tags"><span class="tag">MEAL</span><span class="tag">Cadre logique</span><span class="tag">KoboCollect</span></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4"/><path d="M15 3h4a2 2 0 0 1 2 2v4"/><path d="M9 21H5a2 2 0 0 1-2-2v-4"/><path d="M15 21h4a2 2 0 0 0 2-2v-4"/></svg></div>
+        <h4>Bureautique avancée</h4>
+        <div class="tags"><span class="tag">Excel avancé</span><span class="tag">PowerPoint</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">03</span> Trajectoire</div>
+      <h2>Parcours</h2>
+      <p>Deux ans de pratique professionnelle, en parallèle d'une formation académique construite vers la statistique appliquée au développement.</p>
+    </div>
+    <div class="tabbar reveal">
+      <button class="tab-btn active" data-tab="exp">Professionnel</button>
+      <button class="tab-btn" data-tab="edu">Académique</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-exp">
+
+      <div class="promo-block reveal">
+        <div class="promo-head">
+          <span class="promo-tag">Évolution de carrière</span>
+          <h4>ILYINE Paris <span class="dot">·</span> Remote</h4>
+          <p>De la gestion administrative au pilotage stratégique de la performance, en moins de deux ans.</p>
+        </div>
+        <div class="promo-steps">
+          <div class="promo-step">
+            <div class="ps-date">Juin 2024 — Nov. 2025</div>
+            <div class="ps-role">Gestionnaire</div>
+            <p class="ps-desc">Gestion administrative, suivi des commandes et de la base clients.</p>
+          </div>
+          <div class="promo-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="promo-step current">
+            <div class="ps-badge">Poste actuel</div>
+            <div class="ps-date">Nov. 2025 — Juin 2026</div>
+            <div class="ps-role">Responsable Gestion et Performance Commerciale</div>
+            <p class="ps-desc">Pilotage des KPI, tableaux de bord décisionnels et support stratégique à la direction.</p>
+          </div>
+        </div>
+        <div class="promo-tags">
+          <span class="tag">Planification &amp; suivi de projets</span>
+          <span class="tag">KPI &amp; tableaux de bord</span>
+          <span class="tag">Coordination d'équipes</span>
+          <span class="tag">CRM</span>
+          <span class="tag">Anticipation des risques</span>
+        </div>
+      </div>
+
+      <div class="stage-grid">
+        <div class="stage-card reveal">
+          <div class="stage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="stage-date">Fév. — Oct. 2024</div>
+          <h4>Stagiaire</h4>
+          <div class="school">INRAB · Abomey-Calavi, Bénin</div>
+          <p>Rédaction de rapports et tableaux d'évaluation ; initiation à l'élaboration et au suivi d'indicateurs de performance.</p>
+        </div>
+        <div class="stage-card reveal">
+          <div class="stage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg></div>
+          <div class="stage-date">Avr. — Juil. 2023</div>
+          <h4>Stage académique</h4>
+          <div class="school">MESTFP · Cotonou, Bénin</div>
+          <p>Participation aux enquêtes ministérielles et à la production du Rapport Annuel de Performance (RAP).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-edu">
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-date-pill">2024 — Présent</div>
+            <h4>Cycle d'Ingénieur Statisticien Économiste (ISE)</h4>
+            <div class="school">ENEAM · Université d'Abomey-Calavi</div>
+            <p class="desc">Économétrie, statistique inférentielle, programmation statistique et gestion axée sur les résultats (GAR).</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-date-pill">2020 — 2023</div>
+            <h4>Licence en Planification et Gestion des Projets <span class="badge">16,47/20 — Très Bien</span></h4>
+            <div class="school">ENEAM · Université d'Abomey-Calavi</div>
+            <p class="desc">Fondamentaux de la planification, du cycle de projet et du suivi-évaluation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications" id="certifications">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">04</span> Reconnaissances</div>
+      <h2>Certifications</h2>
+      <p>19 certifications obtenues en autoformation continue.</p>
+    </div>
+    <div class="cert-filters reveal">
+      <button class="filter-btn active" data-filter="all">Toutes</button>
+      <button class="filter-btn" data-filter="me">Suivi-Évaluation</button>
+      <button class="filter-btn" data-filter="data">Data Analytics</button>
+      <button class="filter-btn" data-filter="ai">IA &amp; Statistique</button>
+      <button class="filter-btn" data-filter="autre">Langues &amp; Autres</button>
+    </div>
+    <div class="cert-grid" id="certGrid">
+      <div class="cert-card reveal" data-cat="me"><span class="c-cat">Suivi-Évaluation</span><h4>Building Blocks of Effective National M&amp;E Systems</h4><div class="c-org">World Bank Group — Global Evaluation Initiative</div><div class="foot"><span class="c-date">10 août 2026</span></div></div>
+      <div class="cert-card reveal" data-cat="me"><span class="c-cat">Suivi-Évaluation</span><h4>MEAL dans les situations d'urgence</h4><div class="c-org">Humanitarian Leadership Academy (Kaya)</div><div class="foot"><span class="c-date">19 oct. 2023</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-MEAL-situations-urgence.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="me"><span class="c-cat">Humanitaire</span><h4>Mener une opération humanitaire</h4><div class="c-org">Humanitarian Leadership Academy (Kaya)</div><div class="foot"><span class="c-date">26 oct. 2023</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-Operation-humanitaire.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Data Analytics Fluency Pathway</h4><div class="c-org">Your Learning Builder — 6 microcredentials</div><div class="foot"><span class="c-date">11 août 2026</span></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Data Fundamentals</h4><div class="c-org">IBM SkillsBuild</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/8727579b-473b-4ce1-ade9-244f37376ab0" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Data Collection and Analysis</h4><div class="c-org">IBM SkillsBuild</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/e21b07fe-bc04-450d-9958-1b15f7989d34" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Data Preparation for Analysis</h4><div class="c-org">IBM SkillsBuild</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/6ae54d1d-73ee-4038-a299-1d2d9f9d200f" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Data Classification</h4><div class="c-org">IBM SkillsBuild</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/b579ccd9-02c9-44f7-827d-9a119fbce756" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Data Visualization and Presentation</h4><div class="c-org">IBM SkillsBuild</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/43372051-9892-4d35-bb21-1f82ebee1ad1" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="ai"><span class="c-cat">Statistique</span><h4>Introduction to Inferential and Descriptive Statistics</h4><div class="c-org">IBM SkillsBuild</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/ee269189-4f33-4971-b7c1-976ed4cf9103" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Data Analytics</span><h4>Excel Fundamentals for Data Analysis</h4><div class="c-org">Coursera — Macquarie University</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://coursera.org/verify/KA2RSGYNPVER" target="_blank" rel="noopener">Vérifier ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="ai"><span class="c-cat">IA Responsable</span><h4>Responsible AI</h4><div class="c-org">MTN Skills Academy / Microsoft Learn</div><div class="foot"><span class="c-date">11 août 2026</span></div></div>
+      <div class="cert-card reveal" data-cat="ai"><span class="c-cat">IA</span><h4>AI basics</h4><div class="c-org">MTN Skills Academy / Microsoft Learn</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-AI-basics.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="ai"><span class="c-cat">IA</span><h4>AI for all</h4><div class="c-org">MTN Skills Academy / Microsoft Learn</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-AI-for-all.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="ai"><span class="c-cat">IA</span><h4>Generative AI</h4><div class="c-org">MTN Skills Academy / Microsoft Learn</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Generative-AI.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Productivité</span><h4>Boost Your Productivity with Copilot</h4><div class="c-org">MTN Skills Academy / Microsoft Learn</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Boost-Productivity-Copilot.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Recherche</span><h4>Internet Search and beyond</h4><div class="c-org">MTN Skills Academy / Microsoft Learn</div><div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Internet-Search-and-beyond.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+      <div class="cert-card reveal" data-cat="data"><span class="c-cat">Programmation</span><h4>Intro to Programming</h4><div class="c-org">Kaggle</div><div class="foot"><span class="c-date">20 janvier 2026</span></div></div>
+      <div class="cert-card reveal" data-cat="autre"><span class="c-cat">Langue</span><h4>Test of English for University Purpose — Niveau B2</h4><div class="c-org">Centre Béninois des Langues Étrangères, UAC</div><div class="foot"><span class="c-date">17 janv. 2024</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/CEBELAE-Test-of-English-B2.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section class="projets" id="projets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">05</span> Portfolio</div>
+      <h2>Projets académiques</h2>
+      <p>Trois projets, du relationnel au deep learning, qui illustrent une même exigence : structurer et faire parler la donnée.</p>
+    </div>
+
+    <div class="proj-feature reveal">
+      <div class="pf-visual">
+        <div class="flabel">Projet phare — Deep Learning</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        <h3>Reconnaissance de chiffres manuscrits (MNIST)</h3>
+      </div>
+      <div class="pf-body">
+        <span class="mod">Deep Learning · Vision par ordinateur</span>
+        <p>Conception, entraînement et évaluation d'un réseau de neurones convolutif (CNN) sur MNIST, avec augmentation de données et régularisation (dropout, batch normalization). Le modèle a été intégré à une interface interactive Streamlit permettant de dessiner un chiffre à la main et d'obtenir une prédiction en temps réel.</p>
+        <div class="pf-stats">
+          <div class="pf-stat"><b>CNN</b><span>architecture multi-couches</span></div>
+          <div class="pf-stat"><b>✓</b><span>matrice de confusion</span></div>
+          <div class="pf-stat"><b>UI</b><span>interface de dessin live</span></div>
+        </div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow / Keras</span><span class="tag">Streamlit</span><span class="tag">scikit-learn</span></div>
+        <a class="code-link" href="https://github.com/Ariscoba001/mnist-reconnaissance-chiffres" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Voir le code sur GitHub ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="proj-secondary">
+      <div class="ps-card reveal">
+        <span class="mod">Base de Données · ISE 2</span>
+        <h3>Base de données relationnelle — Cabinet ArchiVision</h3>
+        <p>Analyse métier, modélisation MCD/MLD et implémentation d'un système de gestion relationnel sous Access pour un cabinet d'architectes fictif, avec manuel d'utilisation.</p>
+        <div class="tags"><span class="tag">MS Access</span><span class="tag">MCD/MLD</span><span class="tag">SQL</span></div>
+        <a class="code-link" href="https://github.com/Ariscoba001/bd-cabinet-archivision" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Voir le code ↗
+        </a>
+      </div>
+      <div class="ps-card reveal">
+        <span class="mod">Économétrie appliquée</span>
+        <h3>TD STATA — Analyse statistique complète</h3>
+        <p>Apurement de données, statistiques uni/bi/tri-variées, tests d'hypothèses (Chi², ANOVA) et régression linéaire simple et multivariée sur la performance scolaire.</p>
+        <div class="tags"><span class="tag">STATA</span><span class="tag">Régression linéaire</span></div>
+        <a class="code-link" href="https://github.com/Ariscoba001/td-stata-analyse-statistique" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Voir le code ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;"><span class="n">06</span> Contact</div>
+    <h2>Discutons de vos projets ou opportunités</h2>
+    <p>Ouvert aux stages, collaborations académiques et opportunités en data, économie du développement et évaluation des politiques publiques.</p>
+    <div class="contact-links">
+      <a href="mailto:arielhounkpatin@gmail.com" class="contact-card"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>arielhounkpatin@gmail.com</a>
+      <a href="tel:+22952112372" class="contact-card"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+229 52 11 23 72</a>
+      <a href="https://linkedin.com/in/ariel-hounkpatin" target="_blank" rel="noopener" class="contact-card"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Ariel Angelo Kolawolé HOUNKPATIN</span>
+    <span class="mono">Ingénieur Statisticien Économiste — ENEAM, Université d'Abomey-Calavi</span>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+},{threshold:0.1});
+revealEls.forEach(el=>io.observe(el));
+
+// tabs
+const tabBtns = document.querySelectorAll('.tab-btn');
+tabBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    tabBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+// cert filters
+const filterBtns = document.querySelectorAll('.filter-btn');
+const certCards = document.querySelectorAll('.cert-card');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    certCards.forEach(card=>{
+      const show = f==='all' || card.dataset.cat===f;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
