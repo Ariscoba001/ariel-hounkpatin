@@ -261,6 +261,7 @@ footer{background:var(--ink-950);color:#6b7873;padding:24px 0;}
 .big-stats b{display:block;font-family:'Sora',sans-serif;font-size:1.7rem;color:var(--em-400);line-height:1.1;}
 .big-stats span{font-size:.86rem;color:#b9c4bf;line-height:1.35;display:block;margin-top:4px;}
 .cert-card{display:flex;flex-direction:column;}
+.cert-card .c-cat,.cert-card .c-skills{align-self:flex-start;}
 .cert-card .foot{margin-top:auto;}
 .ps-card{display:flex;flex-direction:column;}
 .ps-card .ps-links{margin-top:auto;}
@@ -492,9 +493,9 @@ img{max-width:100%;height:auto;display:block;}
     <h1>Compétences prouvées</h1>
     <p class="lead">Une compétence listée sans preuve ne vaut pas grand-chose. Ici, chacune est reliée à ce qui l'a fait acquérir (certification, cursus, événement) et à ce qui l'a mise en pratique (projet, expérience, distinction).</p>
     <div class="stat-strip">
-      <div><b>36</b><span>compétences recensées</span></div>
+      <div><b>43</b><span>compétences recensées</span></div>
       <div><b>16</b><span>apprises et appliquées</span></div>
-      <div><b>28</b><span>avec une source d'apprentissage</span></div>
+      <div><b>35</b><span>avec une source d'apprentissage</span></div>
       <div><b>24</b><span>mises en pratique</span></div>
     </div>
   </div>
@@ -512,9 +513,9 @@ img{max-width:100%;height:auto;display:block;}
       <span class="chip chip-experience">Expérience / distinction</span>
     </div>
     <div class="mf-bar" role="group" aria-label="Filtrer les compétences">
-      <button class="mf-btn active" data-mf="all" aria-pressed="true">Toutes (36)</button>
+      <button class="mf-btn active" data-mf="all" aria-pressed="true">Toutes (43)</button>
       <button class="mf-btn" data-mf="both" aria-pressed="false">Apprises et appliquées (16)</button>
-      <button class="mf-btn" data-mf="learned" aria-pressed="false">Apprises (12)</button>
+      <button class="mf-btn" data-mf="learned" aria-pressed="false">Apprises (19)</button>
       <button class="mf-btn" data-mf="applied" aria-pressed="false">Appliquées (8)</button>
     </div>
     <div class="dom" id="dom-stat" role="group" aria-labelledby="h-stat">
@@ -541,7 +542,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
     </div>
     <div class="dom" id="dom-data" role="group" aria-labelledby="h-data">
-      <div class="dom-head"><h2 id="h-data">Data &amp; Programmation</h2><span class="dom-count">8/12 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-data">Data &amp; Programmation</h2><span class="dom-count">8/14 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-python" data-status="both">
         <div class="sk-col"><div class="sk-name">Python pour l'analyse de données</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-dc-scientist">DataCamp Data Scientist</a><a class="chip chip-cert" href="certifications.html#cert-kaggle-prog">Kaggle — Intro to Programming</a></div></div>
@@ -602,6 +603,16 @@ img{max-width:100%;height:auto;display:block;}
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a></div></div>
       </div>
+      <div class="skill-row" id="sk-prog_logic" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Logique de programmation et pensée algorithmique</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-kaggle-prog">Kaggle — Intro to Programming</a><a class="chip chip-cert" href="certifications.html#cert-cs-code">Edinburgh — Code Yourself!</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
+      <div class="skill-row" id="sk-bi" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Business intelligence et outils de reporting (SAP BusinessObjects)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-sap-bo">SAP BusinessObjects</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
     </div>
     <div class="dom" id="dom-perf" role="group" aria-labelledby="h-perf">
       <div class="dom-head"><h2 id="h-perf">Gestion de projet &amp; Performance</h2><span class="dom-count">3/8 apprises et appliquées</span></div>
@@ -612,7 +623,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
       <div class="skill-row" id="sk-pm" data-status="both">
         <div class="sk-col"><div class="sk-name">Planification et suivi de projets</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
-        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-kaya-hum">Kaya — Opération humanitaire</a><a class="chip chip-formation" href="index.html#parcours">Licence PGP (ENEAM)</a></div></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-kaya-hum">Kaya — Opération humanitaire</a><a class="chip chip-cert" href="certifications.html#cert-m365-projects">Microsoft 365 — Projets</a><a class="chip chip-formation" href="index.html#parcours">Licence PGP (ENEAM)</a></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">ILYINE Paris</a></div></div>
       </div>
       <div class="skill-row" id="sk-kpi" data-status="both">
@@ -683,7 +694,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
     </div>
     <div class="dom" id="dom-ia" role="group" aria-labelledby="h-ia">
-      <div class="dom-head"><h2 id="h-ia">IA, outils &amp; langues</h2><span class="dom-count">0/6 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-ia">IA, outils numériques &amp; langues</h2><span class="dom-count">0/11 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-ai_fund" data-status="learned">
         <div class="sk-col"><div class="sk-name">Fondamentaux de l'intelligence artificielle</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-mtn-basics">MTN — AI basics</a><a class="chip chip-cert" href="certifications.html#cert-mtn-all">MTN — AI for all</a></div></div>
@@ -707,6 +718,31 @@ img{max-width:100%;height:auto;display:block;}
       <div class="skill-row" id="sk-info_search" data-status="learned">
         <div class="sk-col"><div class="sk-name">Recherche d'information avancée</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-mtn-search">MTN — Internet Search</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
+      <div class="skill-row" id="sk-info_lit" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Culture de l'information : évaluer et utiliser des sources</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-cs-infolit">SUNY — Information Literacy</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
+      <div class="skill-row" id="sk-m365" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Suite Microsoft 365 : prise en main et productivité</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-m365-start">Microsoft 365 — Prise en main</a><a class="chip chip-cert" href="certifications.html#cert-m365-collab">Microsoft 365 — Collaboration</a><a class="chip chip-cert" href="certifications.html#cert-m365-data">Microsoft 365 — Données</a><a class="chip chip-cert" href="certifications.html#cert-m365-projects">Microsoft 365 — Projets</a><a class="chip chip-cert" href="certifications.html#cert-m365-optimise">Microsoft 365 — Productivité</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
+      <div class="skill-row" id="sk-collab" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Collaboration et travail en ligne</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-m365-collab">Microsoft 365 — Collaboration</a><a class="chip chip-cert" href="certifications.html#cert-mtn-online">MTN — Travail en ligne</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
+      <div class="skill-row" id="sk-it_basics" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Culture informatique : ordinateurs, appareils et outils numériques</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-mtn-devices">MTN — Ordinateurs et appareils</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
+      </div>
+      <div class="skill-row" id="sk-iot" data-status="learned">
+        <div class="sk-col"><div class="sk-name">Internet des objets et cloud computing (notions)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-cs-iot">Yonsei — IoT &amp; Cloud</a></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><span class="none">—</span></div></div>
       </div>
       <div class="skill-row" id="sk-english" data-status="learned">
