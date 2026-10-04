@@ -376,8 +376,8 @@ img{max-width:100%;height:auto;display:block;}
 .chip-formation,.chip-event{border-color:rgba(14,157,107,.35);color:var(--em-600);background:var(--white);}
 .chip-project{background:var(--ink-950);border-color:var(--ink-950);color:#fff;}
 .chip-project:hover{background:var(--em-600);border-color:var(--em-600);color:#fff;}
-.chip-experience,.chip-distinction{border-color:var(--ink-950);color:var(--ink-950);background:var(--white);}
-.chip-experience:hover,.chip-distinction:hover{background:var(--ink-950);color:#fff;}
+.chip-experience,.chip-distinction,.chip-engagement{border-color:var(--ink-950);color:var(--ink-950);background:var(--white);}
+.chip-experience:hover,.chip-distinction:hover,.chip-engagement:hover{background:var(--ink-950);color:#fff;}
 .none{color:var(--text-400);font-size:.95rem;}
 
 /* certifications — fiches */
@@ -469,6 +469,27 @@ img{max-width:100%;height:auto;display:block;}
 .erd-legend span{display:inline-flex;align-items:center;gap:8px;}
 .erd-legend i{width:16px;height:16px;border-radius:4px;display:block;}
 .sec-tight{padding:72px 0;}
+/* vie associative */
+.assoc-card{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--white);}
+@media(max-width:900px){.assoc-card{grid-template-columns:1fr;}}
+.assoc-main{background:var(--ink-950);color:#fff;padding:42px 38px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.assoc-main::before{content:"";position:absolute;top:-28%;right:-18%;width:380px;height:380px;background:radial-gradient(circle,rgba(20,181,126,.24),transparent 70%);}
+.assoc-main > *{position:relative;z-index:2;}
+.assoc-kicker{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--em-400);background:rgba(79,214,164,.12);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+.assoc-main h3{font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.15;color:#fff;margin-bottom:10px;}
+.assoc-org{color:var(--em-400);font-weight:600;font-size:1.06rem;margin-bottom:18px;}
+.assoc-main p{color:#c1cec9;font-size:1.04rem;margin-bottom:22px;}
+.assoc-main .tags{margin-bottom:24px;}
+.assoc-main .tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#d3dfda;}
+.assoc-main .link-case{margin-top:auto;align-self:flex-start;background:transparent;border-color:rgba(255,255,255,.22);color:#fff;}
+.assoc-main .link-case:hover{border-color:var(--em-400);color:var(--em-400);}
+.assoc-resp{padding:38px 36px;}
+.assoc-resp h4{font-family:'JetBrains Mono',monospace;font-size:.86rem;letter-spacing:.07em;text-transform:uppercase;color:var(--em-600);margin-bottom:20px;}
+.assoc-resp ol{list-style:none;display:grid;gap:16px;counter-reset:r;}
+.assoc-resp li{counter-increment:r;position:relative;padding-left:46px;color:var(--text-600);font-size:1.02rem;line-height:1.5;}
+.assoc-resp li::before{content:counter(r);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--em-100);color:var(--em-600);font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;}
+@media(max-width:1100px){.nav-links{gap:18px;font-size:.9rem;}}
+
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
@@ -482,6 +503,7 @@ img{max-width:100%;height:auto;display:block;}
       <a href="index.html#profil">Profil</a>
       <a href="competences.html" class="active" aria-current="page">Compétences</a>
       <a href="index.html#parcours">Parcours</a>
+      <a href="index.html#vie-associative">Vie associative</a>
       <a href="certifications.html">Certifications</a>
       <a href="index.html#projets">Projets</a>
       <a class="nav-cv" href="cv-ariel-hounkpatin.pdf" download>Mon CV ↓</a>
@@ -497,10 +519,10 @@ img{max-width:100%;height:auto;display:block;}
     <h1>Compétences prouvées</h1>
     <p class="lead">Une compétence listée sans preuve ne vaut pas grand-chose. Ici, chacune est reliée à ce qui l'a fait acquérir (certification, cursus, événement) et à ce qui l'a mise en pratique (projet, expérience, distinction).</p>
     <div class="stat-strip">
-      <div><b>43</b><span>compétences recensées</span></div>
+      <div><b>44</b><span>compétences recensées</span></div>
       <div><b>16</b><span>apprises et appliquées</span></div>
       <div><b>35</b><span>avec une source d'apprentissage</span></div>
-      <div><b>24</b><span>mises en pratique</span></div>
+      <div><b>25</b><span>mises en pratique</span></div>
     </div>
   </div>
 </section>
@@ -514,13 +536,13 @@ img{max-width:100%;height:auto;display:block;}
       <span class="chip chip-cert">Certification</span>
       <span class="chip chip-formation">Cursus / événement</span>
       <span class="chip chip-project">Projet</span>
-      <span class="chip chip-experience">Expérience / distinction</span>
+      <span class="chip chip-experience">Expérience / distinction / engagement</span>
     </div>
     <div class="mf-bar" role="group" aria-label="Filtrer les compétences">
-      <button class="mf-btn active" data-mf="all" aria-pressed="true">Toutes (43)</button>
+      <button class="mf-btn active" data-mf="all" aria-pressed="true">Toutes (44)</button>
       <button class="mf-btn" data-mf="both" aria-pressed="false">Apprises et appliquées (16)</button>
       <button class="mf-btn" data-mf="learned" aria-pressed="false">Apprises (19)</button>
-      <button class="mf-btn" data-mf="applied" aria-pressed="false">Appliquées (8)</button>
+      <button class="mf-btn" data-mf="applied" aria-pressed="false">Appliquées (9)</button>
     </div>
     <div class="dom" id="dom-stat" role="group" aria-labelledby="h-stat">
       <div class="dom-head"><h2 id="h-stat">Statistique &amp; Économétrie</h2><span class="dom-count">4/4 apprises et appliquées</span></div>
@@ -619,7 +641,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
     </div>
     <div class="dom" id="dom-perf" role="group" aria-labelledby="h-perf">
-      <div class="dom-head"><h2 id="h-perf">Gestion de projet &amp; Performance</h2><span class="dom-count">3/8 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-perf">Gestion de projet &amp; Performance</h2><span class="dom-count">3/9 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-req" data-status="both">
         <div class="sk-col"><div class="sk-name">Analyse des besoins et cadrage d'un projet</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Licence PGP (ENEAM)</a></div></div>
@@ -648,7 +670,7 @@ img{max-width:100%;height:auto;display:block;}
       <div class="skill-row" id="sk-coord" data-status="applied">
         <div class="sk-col"><div class="sk-name">Coordination d'équipes et support stratégique</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">ILYINE Paris</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">ILYINE Paris</a><a class="chip chip-engagement" href="index.html#vie-associative">City Director · SMILE MISSION (en cours)</a></div></div>
       </div>
       <div class="skill-row" id="sk-risk_anticip" data-status="applied">
         <div class="sk-col"><div class="sk-name">Anticipation des risques opérationnels</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
@@ -659,6 +681,11 @@ img{max-width:100%;height:auto;display:block;}
         <div class="sk-col"><div class="sk-name">Documentation technique et manuel utilisateur</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-archivision.html">Base de données ArchiVision</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-leadership" data-status="applied">
+        <div class="sk-col"><div class="sk-name">Leadership et animation d'une équipe de bénévoles</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-engagement" href="index.html#vie-associative">City Director · SMILE MISSION (en cours)</a></div></div>
       </div>
     </div>
     <div class="dom" id="dom-eval" role="group" aria-labelledby="h-eval">

@@ -376,8 +376,8 @@ img{max-width:100%;height:auto;display:block;}
 .chip-formation,.chip-event{border-color:rgba(14,157,107,.35);color:var(--em-600);background:var(--white);}
 .chip-project{background:var(--ink-950);border-color:var(--ink-950);color:#fff;}
 .chip-project:hover{background:var(--em-600);border-color:var(--em-600);color:#fff;}
-.chip-experience,.chip-distinction{border-color:var(--ink-950);color:var(--ink-950);background:var(--white);}
-.chip-experience:hover,.chip-distinction:hover{background:var(--ink-950);color:#fff;}
+.chip-experience,.chip-distinction,.chip-engagement{border-color:var(--ink-950);color:var(--ink-950);background:var(--white);}
+.chip-experience:hover,.chip-distinction:hover,.chip-engagement:hover{background:var(--ink-950);color:#fff;}
 .none{color:var(--text-400);font-size:.95rem;}
 
 /* certifications — fiches */
@@ -469,6 +469,27 @@ img{max-width:100%;height:auto;display:block;}
 .erd-legend span{display:inline-flex;align-items:center;gap:8px;}
 .erd-legend i{width:16px;height:16px;border-radius:4px;display:block;}
 .sec-tight{padding:72px 0;}
+/* vie associative */
+.assoc-card{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--white);}
+@media(max-width:900px){.assoc-card{grid-template-columns:1fr;}}
+.assoc-main{background:var(--ink-950);color:#fff;padding:42px 38px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.assoc-main::before{content:"";position:absolute;top:-28%;right:-18%;width:380px;height:380px;background:radial-gradient(circle,rgba(20,181,126,.24),transparent 70%);}
+.assoc-main > *{position:relative;z-index:2;}
+.assoc-kicker{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--em-400);background:rgba(79,214,164,.12);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+.assoc-main h3{font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.15;color:#fff;margin-bottom:10px;}
+.assoc-org{color:var(--em-400);font-weight:600;font-size:1.06rem;margin-bottom:18px;}
+.assoc-main p{color:#c1cec9;font-size:1.04rem;margin-bottom:22px;}
+.assoc-main .tags{margin-bottom:24px;}
+.assoc-main .tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#d3dfda;}
+.assoc-main .link-case{margin-top:auto;align-self:flex-start;background:transparent;border-color:rgba(255,255,255,.22);color:#fff;}
+.assoc-main .link-case:hover{border-color:var(--em-400);color:var(--em-400);}
+.assoc-resp{padding:38px 36px;}
+.assoc-resp h4{font-family:'JetBrains Mono',monospace;font-size:.86rem;letter-spacing:.07em;text-transform:uppercase;color:var(--em-600);margin-bottom:20px;}
+.assoc-resp ol{list-style:none;display:grid;gap:16px;counter-reset:r;}
+.assoc-resp li{counter-increment:r;position:relative;padding-left:46px;color:var(--text-600);font-size:1.02rem;line-height:1.5;}
+.assoc-resp li::before{content:counter(r);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--em-100);color:var(--em-600);font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;}
+@media(max-width:1100px){.nav-links{gap:18px;font-size:.9rem;}}
+
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
@@ -482,6 +503,7 @@ img{max-width:100%;height:auto;display:block;}
       <a href="#profil">Profil</a>
       <a href="competences.html">Compétences</a>
       <a href="#parcours">Parcours</a>
+      <a href="#vie-associative">Vie associative</a>
       <a href="certifications.html">Certifications</a>
       <a href="#projets">Projets</a>
       <a class="nav-cv" href="cv-ariel-hounkpatin.pdf" download>Mon CV ↓</a>
@@ -529,7 +551,7 @@ img{max-width:100%;height:auto;display:block;}
       <p class="profil-lead">Statisticien-économiste en formation, orienté finance, assurance et gestion des risques, avec plus de deux ans et demi d'expérience, dont le pilotage de la performance.</p>
       <p>Élève ingénieur en 3ᵉ année à l'ENEAM (cycle ISE), je poursuis la spécialisation Finance et Actuariat après une Licence en Planification et Gestion des Projets obtenue avec la mention Très Bien (16,47/20). Mon socle : statistique, économétrie, programmation et bases de données.</p>
       <p>Chez ILYINE Paris (juin 2024 – août 2026), je suis passé de la gestion administrative au pilotage de la performance commerciale : suivi des KPI, tableaux de bord décisionnels et support stratégique à la direction. J'y ai appris à transformer des chiffres en décisions.</p>
-      <p>Je consolide ce socle par des certifications reconnues (DataCamp, IBM SkillsBuild, World Bank OLC) et par la pratique : 2ᵉ place au Concours national de Risk Management de l'AMRAB, participation à Deep Learning IndabaX Bénin 2026, et trois projets documentés en accès libre. Je prépare un master à l'horizon 2028.</p>
+      <p>Je consolide ce socle par des certifications reconnues (DataCamp, IBM SkillsBuild, World Bank OLC) et par la pratique : 2ᵉ place au Concours national de Risk Management de l'AMRAB, participation à Deep Learning IndabaX Bénin 2026, rôle de City Director bénévole pour SMILE MISSION (Linda Dominguez Foundation) à Porto-Novo, et trois projets documentés en accès libre. Je prépare un master à l'horizon 2028.</p>
     </div>
     <div class="reveal">
       <div class="kv-table">
@@ -612,7 +634,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
     </div>
     <div class="matrix-cta reveal">
-      <p><b>16 de ces 43 compétences sont à la fois apprises et appliquées.</b> La page dédiée relie chaque compétence à la certification qui l'a fait acquérir et au projet ou à l'expérience où elle a été mise en pratique.</p>
+      <p><b>16 de ces 44 compétences sont à la fois apprises et appliquées.</b> La page dédiée relie chaque compétence à la certification qui l'a fait acquérir et au projet ou à l'expérience où elle a été mise en pratique.</p>
       <a class="btn btn-em" href="competences.html">Voir la matrice de preuves →</a>
     </div>
   </div>
@@ -694,11 +716,43 @@ img{max-width:100%;height:auto;display:block;}
   </div>
 </section>
 
+<!-- VIE ASSOCIATIVE -->
+<section id="vie-associative">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">05</span> Engagement</div>
+      <h2>Vie associative</h2>
+      <p>Un engagement bénévole au service de l'éducation et des communautés vulnérables.</p>
+    </div>
+    <article class="assoc-card reveal">
+      <div class="assoc-main">
+        <div class="assoc-kicker">Poste bénévole · depuis le 23 septembre 2026</div>
+        <h3>City Director, Porto-Novo (Bénin)</h3>
+        <div class="assoc-org">Linda Dominguez Foundation · SMILE MISSION</div>
+        <p>Nommé City Director de SMILE MISSION pour Porto-Novo par la fondatrice de la Linda Dominguez Foundation (LDF), qui œuvre pour diffuser l'alphabétisation, l'espoir et la dignité auprès des enfants et des communautés vulnérables.</p>
+        <div class="tags"><span class="tag">Leadership</span><span class="tag">Coordination de bénévoles</span><span class="tag">Reporting</span><span class="tag">Campagnes</span></div>
+        <a class="link-case" href="https://lindadominguezfoundation.org" target="_blank" rel="noopener">Site de la fondation ↗</a>
+      </div>
+      <div class="assoc-resp">
+        <h4>Responsabilités confiées</h4>
+        <ol>
+          <li>Assurer la direction et le développement de la présence de LDF dans la région confiée.</li>
+          <li>Constituer, accompagner et coordonner des City Directors, des représentants et des bénévoles.</li>
+          <li>Faire valider chaque activité par la direction de LDF avant son exécution.</li>
+          <li>Représenter officiellement la fondation, dans le respect de son Code de conduite.</li>
+          <li>Rendre compte régulièrement de l'avancement, de l'impact et des difficultés.</li>
+          <li>Conduire les campagnes de la fondation dans la région, comme l'opération « Back to School Drive ».</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- CERTIFICATIONS -->
 <section class="certifications" id="certifications">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow"><span class="n">05</span> Reconnaissances</div>
+      <div class="eyebrow"><span class="n">06</span> Reconnaissances</div>
       <h2>Certifications</h2>
       <p>32 certifications et badges, chacun vérifiable en ligne ou consultable en PDF, et relié aux compétences qu'il a permis d'acquérir.</p>
     </div>
@@ -937,7 +991,7 @@ img{max-width:100%;height:auto;display:block;}
 <section id="projets">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow"><span class="n">06</span> Portfolio</div>
+      <div class="eyebrow"><span class="n">07</span> Portfolio</div>
       <h2>Projets académiques</h2>
       <p>Trois études de cas, du relationnel au deep learning, avec la démarche, les résultats et les compétences mobilisées.</p>
     </div>
@@ -994,7 +1048,7 @@ img{max-width:100%;height:auto;display:block;}
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;"><span class="n">07</span> Contact</div>
+    <div class="eyebrow" style="justify-content:center;"><span class="n">08</span> Contact</div>
     <h2>Discutons de vos projets ou opportunités</h2>
     <p>Ouvert aux stages, collaborations académiques et opportunités en data, finance, assurance et évaluation des politiques publiques.</p>
     <div class="contact-links">

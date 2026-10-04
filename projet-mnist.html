@@ -376,8 +376,8 @@ img{max-width:100%;height:auto;display:block;}
 .chip-formation,.chip-event{border-color:rgba(14,157,107,.35);color:var(--em-600);background:var(--white);}
 .chip-project{background:var(--ink-950);border-color:var(--ink-950);color:#fff;}
 .chip-project:hover{background:var(--em-600);border-color:var(--em-600);color:#fff;}
-.chip-experience,.chip-distinction{border-color:var(--ink-950);color:var(--ink-950);background:var(--white);}
-.chip-experience:hover,.chip-distinction:hover{background:var(--ink-950);color:#fff;}
+.chip-experience,.chip-distinction,.chip-engagement{border-color:var(--ink-950);color:var(--ink-950);background:var(--white);}
+.chip-experience:hover,.chip-distinction:hover,.chip-engagement:hover{background:var(--ink-950);color:#fff;}
 .none{color:var(--text-400);font-size:.95rem;}
 
 /* certifications — fiches */
@@ -469,6 +469,27 @@ img{max-width:100%;height:auto;display:block;}
 .erd-legend span{display:inline-flex;align-items:center;gap:8px;}
 .erd-legend i{width:16px;height:16px;border-radius:4px;display:block;}
 .sec-tight{padding:72px 0;}
+/* vie associative */
+.assoc-card{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--white);}
+@media(max-width:900px){.assoc-card{grid-template-columns:1fr;}}
+.assoc-main{background:var(--ink-950);color:#fff;padding:42px 38px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.assoc-main::before{content:"";position:absolute;top:-28%;right:-18%;width:380px;height:380px;background:radial-gradient(circle,rgba(20,181,126,.24),transparent 70%);}
+.assoc-main > *{position:relative;z-index:2;}
+.assoc-kicker{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--em-400);background:rgba(79,214,164,.12);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+.assoc-main h3{font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.15;color:#fff;margin-bottom:10px;}
+.assoc-org{color:var(--em-400);font-weight:600;font-size:1.06rem;margin-bottom:18px;}
+.assoc-main p{color:#c1cec9;font-size:1.04rem;margin-bottom:22px;}
+.assoc-main .tags{margin-bottom:24px;}
+.assoc-main .tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#d3dfda;}
+.assoc-main .link-case{margin-top:auto;align-self:flex-start;background:transparent;border-color:rgba(255,255,255,.22);color:#fff;}
+.assoc-main .link-case:hover{border-color:var(--em-400);color:var(--em-400);}
+.assoc-resp{padding:38px 36px;}
+.assoc-resp h4{font-family:'JetBrains Mono',monospace;font-size:.86rem;letter-spacing:.07em;text-transform:uppercase;color:var(--em-600);margin-bottom:20px;}
+.assoc-resp ol{list-style:none;display:grid;gap:16px;counter-reset:r;}
+.assoc-resp li{counter-increment:r;position:relative;padding-left:46px;color:var(--text-600);font-size:1.02rem;line-height:1.5;}
+.assoc-resp li::before{content:counter(r);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--em-100);color:var(--em-600);font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;}
+@media(max-width:1100px){.nav-links{gap:18px;font-size:.9rem;}}
+
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
@@ -482,6 +503,7 @@ img{max-width:100%;height:auto;display:block;}
       <a href="index.html#profil">Profil</a>
       <a href="competences.html">Compétences</a>
       <a href="index.html#parcours">Parcours</a>
+      <a href="index.html#vie-associative">Vie associative</a>
       <a href="certifications.html">Certifications</a>
       <a href="index.html#projets" class="active" aria-current="page">Projets</a>
       <a class="nav-cv" href="cv-ariel-hounkpatin.pdf" download>Mon CV ↓</a>
