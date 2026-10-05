@@ -341,8 +341,8 @@ img{max-width:100%;height:auto;display:block;}
 .stat-strip{display:flex;gap:44px;flex-wrap:wrap;margin-top:36px;}
 .stat-strip div b{font-family:'Sora',sans-serif;font-size:2.4rem;color:var(--em-400);display:block;line-height:1.1;}
 .stat-strip div span{color:#9fb0a8;font-size:.94rem;}
-.meta-strip{display:grid;grid-template-columns:repeat(3,auto);gap:14px 44px;justify-content:start;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
-@media(max-width:700px){.meta-strip{grid-template-columns:1fr;}}
+.meta-strip{display:flex;flex-wrap:wrap;gap:14px 44px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
+@media(max-width:700px){.meta-strip{flex-direction:column;}}
 .meta-strip dt{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#7f918a;margin-bottom:3px;}
 .meta-strip dd{color:#e7efec;font-size:1rem;font-weight:600;}
 .meta-strip a{color:var(--em-400);}
@@ -469,6 +469,27 @@ img{max-width:100%;height:auto;display:block;}
 .erd-legend span{display:inline-flex;align-items:center;gap:8px;}
 .erd-legend i{width:16px;height:16px;border-radius:4px;display:block;}
 .sec-tight{padding:72px 0;}
+/* grille de projets et tableaux de résultats */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.proj-grid{grid-template-columns:1fr;}}
+.ps-card.hidden{display:none;}
+.proj-grid .ps-card h3{font-size:1.16rem;line-height:1.3;}
+.proj-grid .ps-result{display:block;margin:2px 0 14px;}
+.proj-grid .ps-result b{display:block;white-space:nowrap;font-size:1.7rem;line-height:1.15;}
+.proj-grid .ps-result span{display:block;margin-top:3px;font-size:.92rem;}
+.proj-grid .ps-links{flex-wrap:nowrap;gap:8px;}
+.proj-grid .link-case,.proj-grid .code-link{padding:9px 13px;font-size:.88rem;white-space:nowrap;}
+.proj-grid .ps-card p{font-size:.98rem;}
+.tbl-wrap{margin-bottom:26px;overflow-x:auto;}
+.tbl-cap{font-family:'JetBrains Mono',monospace;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--em-600);font-weight:700;margin-bottom:10px;}
+table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);font-size:1rem;}
+.rt th{background:var(--ink-950);color:#fff;text-align:left;padding:13px 18px;font-family:'Sora',sans-serif;font-size:.9rem;font-weight:700;}
+.rt td{padding:13px 18px;border-top:1px solid var(--line);color:var(--text-600);vertical-align:top;}
+.rt td:first-child{color:var(--text-900);font-weight:600;}
+.team-note{margin-top:22px;font-size:1rem;color:#b4c2bc;max-width:760px;}
+.team-note b{color:var(--em-400);}
+
 /* vie associative */
 .assoc-card{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--white);}
 @media(max-width:900px){.assoc-card{grid-template-columns:1fr;}}
@@ -519,10 +540,10 @@ img{max-width:100%;height:auto;display:block;}
     <h1>Compétences prouvées</h1>
     <p class="lead">Une compétence listée sans preuve ne vaut pas grand-chose. Ici, chacune est reliée à ce qui l'a fait acquérir (certification, cursus, événement) et à ce qui l'a mise en pratique (projet, expérience, distinction).</p>
     <div class="stat-strip">
-      <div><b>44</b><span>compétences recensées</span></div>
-      <div><b>16</b><span>apprises et appliquées</span></div>
-      <div><b>35</b><span>avec une source d'apprentissage</span></div>
-      <div><b>25</b><span>mises en pratique</span></div>
+      <div><b>53</b><span>compétences recensées</span></div>
+      <div><b>21</b><span>apprises et appliquées</span></div>
+      <div><b>40</b><span>avec une source d'apprentissage</span></div>
+      <div><b>34</b><span>mises en pratique</span></div>
     </div>
   </div>
 </section>
@@ -539,40 +560,75 @@ img{max-width:100%;height:auto;display:block;}
       <span class="chip chip-experience">Expérience / distinction / engagement</span>
     </div>
     <div class="mf-bar" role="group" aria-label="Filtrer les compétences">
-      <button class="mf-btn active" data-mf="all" aria-pressed="true">Toutes (44)</button>
-      <button class="mf-btn" data-mf="both" aria-pressed="false">Apprises et appliquées (16)</button>
+      <button class="mf-btn active" data-mf="all" aria-pressed="true">Toutes (53)</button>
+      <button class="mf-btn" data-mf="both" aria-pressed="false">Apprises et appliquées (21)</button>
       <button class="mf-btn" data-mf="learned" aria-pressed="false">Apprises (19)</button>
-      <button class="mf-btn" data-mf="applied" aria-pressed="false">Appliquées (9)</button>
+      <button class="mf-btn" data-mf="applied" aria-pressed="false">Appliquées (13)</button>
     </div>
     <div class="dom" id="dom-stat" role="group" aria-labelledby="h-stat">
-      <div class="dom-head"><h2 id="h-stat">Statistique &amp; Économétrie</h2><span class="dom-count">4/4 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-stat">Statistique &amp; Économétrie</h2><span class="dom-count">9/10 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-stat_desc" data-status="both">
         <div class="sk-col"><div class="sk-name">Statistiques descriptives (uni-, bi- et trivariées)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-dc-analyst">DataCamp Data Analyst</a><a class="chip chip-cert" href="certifications.html#cert-ibm-path">IBM — Data Analytics Fluency Pathway</a><a class="chip chip-cert" href="certifications.html#cert-ibm-stats">IBM Statistics</a><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
       </div>
       <div class="skill-row" id="sk-inference" data-status="both">
         <div class="sk-col"><div class="sk-name">Statistique inférentielle et tests d'hypothèses (Chi², t, ANOVA)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-dc-scientist">DataCamp Data Scientist</a><a class="chip chip-cert" href="certifications.html#cert-ibm-path">IBM — Data Analytics Fluency Pathway</a><a class="chip chip-cert" href="certifications.html#cert-ibm-stats">IBM Statistics</a><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
       </div>
       <div class="skill-row" id="sk-regression" data-status="both">
         <div class="sk-col"><div class="sk-name">Régression linéaire simple et multiple</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a></div></div>
       </div>
       <div class="skill-row" id="sk-stata" data-status="both">
         <div class="sk-col"><div class="sk-name">Programmation sous STATA (do-files, journaux de résultats)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-logit" data-status="both">
+        <div class="sk-col"><div class="sk-name">Régression logistique et modèles binaires (logit, probit)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-model_valid" data-status="both">
+        <div class="sk-col"><div class="sk-name">Validation de modèles de classement (courbe ROC, Hosmer-Lemeshow, linktest)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-survey" data-status="applied">
+        <div class="sk-col"><div class="sk-name">Exploitation d'enquêtes auprès des ménages et pondération (EHCVM)</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-poverty" data-status="both">
+        <div class="sk-col"><div class="sk-name">Mesure de la pauvreté et des inégalités (FGT, Lorenz, Gini)</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-iv_tobit" data-status="both">
+        <div class="sk-col"><div class="sk-name">Variables instrumentales, 2SLS et modèles Tobit</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-anova" data-status="both">
+        <div class="sk-col"><div class="sk-name">ANOVA, tests non paramétriques et diagnostic des hypothèses</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Cursus ISE (ENEAM)</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
       </div>
     </div>
     <div class="dom" id="dom-data" role="group" aria-labelledby="h-data">
-      <div class="dom-head"><h2 id="h-data">Data &amp; Programmation</h2><span class="dom-count">8/14 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-data">Data &amp; Programmation</h2><span class="dom-count">8/15 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-python" data-status="both">
         <div class="sk-col"><div class="sk-name">Python pour l'analyse de données</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-dc-scientist">DataCamp Data Scientist</a><a class="chip chip-cert" href="certifications.html#cert-kaggle-prog">Kaggle — Intro to Programming</a></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-r_lang" data-status="applied">
+        <div class="sk-col"><div class="sk-name">Programmation sous R</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
       </div>
       <div class="skill-row" id="sk-sql" data-status="both">
         <div class="sk-col"><div class="sk-name">SQL et requêtes sur bases relationnelles</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
@@ -597,12 +653,12 @@ img{max-width:100%;height:auto;display:block;}
       <div class="skill-row" id="sk-data_prep" data-status="both">
         <div class="sk-col"><div class="sk-name">Préparation et nettoyage des données</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-dc-scientist">DataCamp Data Scientist</a><a class="chip chip-cert" href="certifications.html#cert-dc-analyst">DataCamp Data Analyst</a><a class="chip chip-cert" href="certifications.html#cert-ibm-path">IBM — Data Analytics Fluency Pathway</a><a class="chip chip-cert" href="certifications.html#cert-ibm-prep">IBM Data Preparation</a><a class="chip chip-cert" href="certifications.html#cert-coursera-excel">Excel (Macquarie)</a></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
       </div>
       <div class="skill-row" id="sk-data_viz" data-status="both">
         <div class="sk-col"><div class="sk-name">Visualisation et restitution des données</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-dc-scientist">DataCamp Data Scientist</a><a class="chip chip-cert" href="certifications.html#cert-dc-analyst">DataCamp Data Analyst</a><a class="chip chip-cert" href="certifications.html#cert-ibm-path">IBM — Data Analytics Fluency Pathway</a><a class="chip chip-cert" href="certifications.html#cert-ibm-viz">IBM Data Visualization</a></div></div>
-        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
       </div>
       <div class="skill-row" id="sk-excel" data-status="learned">
         <div class="sk-col"><div class="sk-name">Excel pour l'analyse de données</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
@@ -641,7 +697,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
     </div>
     <div class="dom" id="dom-perf" role="group" aria-labelledby="h-perf">
-      <div class="dom-head"><h2 id="h-perf">Gestion de projet &amp; Performance</h2><span class="dom-count">3/9 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-perf">Gestion de projet &amp; Performance</h2><span class="dom-count">3/10 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-req" data-status="both">
         <div class="sk-col"><div class="sk-name">Analyse des besoins et cadrage d'un projet</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-formation" href="index.html#parcours">Licence PGP (ENEAM)</a></div></div>
@@ -687,9 +743,14 @@ img{max-width:100%;height:auto;display:block;}
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-engagement" href="index.html#vie-associative">City Director · SMILE MISSION (en cours)</a></div></div>
       </div>
+      <div class="skill-row" id="sk-team_lead" data-status="applied">
+        <div class="sk-col"><div class="sk-name">Pilotage d'un travail de groupe (chef de groupe)</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
+      </div>
     </div>
     <div class="dom" id="dom-eval" role="group" aria-labelledby="h-eval">
-      <div class="dom-head"><h2 id="h-eval">Suivi-Évaluation &amp; Humanitaire</h2><span class="dom-count">0/5 apprises et appliquées</span></div>
+      <div class="dom-head"><h2 id="h-eval">Suivi-Évaluation &amp; Humanitaire</h2><span class="dom-count">0/6 apprises et appliquées</span></div>
       <div class="skill-row" id="sk-sys_me" data-status="learned">
         <div class="sk-col"><div class="sk-name">Systèmes nationaux de suivi-évaluation</div><span class="meter" aria-hidden="true"><i class="on"></i><i class="app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><a class="chip chip-cert" href="certifications.html#cert-wb-me">World Bank — Systèmes de S&amp;E</a></div></div>
@@ -714,6 +775,11 @@ img{max-width:100%;height:auto;display:block;}
         <div class="sk-col"><div class="sk-name">Rédaction de rapports et tableaux d'évaluation</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
         <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
         <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">INRAB (stage)</a></div></div>
+      </div>
+      <div class="skill-row" id="sk-policy_reco" data-status="applied">
+        <div class="sk-col"><div class="sk-name">Recommandations de politiques publiques fondées sur les données</div><span class="meter" aria-hidden="true"><i class=""></i><i class="on app"></i></span></div>
+        <div class="sk-col"><div class="lab">Appris via</div><div class="chips"><span class="none">—</span></div></div>
+        <div class="sk-col"><div class="lab">Appliqué dans</div><div class="chips"><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
       </div>
     </div>
     <div class="dom" id="dom-risk" role="group" aria-labelledby="h-risk">
@@ -813,18 +879,22 @@ img{max-width:100%;height:auto;display:block;}
     });
   });
 
-  var fb=document.querySelectorAll('.filter-btn');
-  fb.forEach(function(b){
-    b.addEventListener('click',function(){
-      fb.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
-      b.classList.add('active');b.setAttribute('aria-pressed','true');
-      var f=b.dataset.filter;
-      document.querySelectorAll('[data-cat]').forEach(function(c){
-        var show=(f==='all')||(c.dataset.cat===f);
-        c.classList.toggle('hidden',!show);
+  document.querySelectorAll('.cert-filters').forEach(function(bar){
+    var btns=bar.querySelectorAll('.filter-btn');
+    var grid=document.getElementById(bar.dataset.target);
+    if(!grid){return;}
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
+        b.classList.add('active');b.setAttribute('aria-pressed','true');
+        var f=b.dataset.filter;
+        grid.querySelectorAll('[data-cat]').forEach(function(c){
+          var show=(f==='all')||(c.dataset.cat===f);
+          c.classList.toggle('hidden',!show);
+        });
+        var cnt=document.getElementById('certCount');
+        if(cnt && bar.dataset.target==='certGrid'){cnt.textContent=grid.querySelectorAll('[data-cat]:not(.hidden)').length;}
       });
-      var cnt=document.getElementById('certCount');
-      if(cnt){cnt.textContent=document.querySelectorAll('[data-cat]:not(.hidden)').length;}
     });
   });
 

@@ -341,8 +341,8 @@ img{max-width:100%;height:auto;display:block;}
 .stat-strip{display:flex;gap:44px;flex-wrap:wrap;margin-top:36px;}
 .stat-strip div b{font-family:'Sora',sans-serif;font-size:2.4rem;color:var(--em-400);display:block;line-height:1.1;}
 .stat-strip div span{color:#9fb0a8;font-size:.94rem;}
-.meta-strip{display:grid;grid-template-columns:repeat(3,auto);gap:14px 44px;justify-content:start;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
-@media(max-width:700px){.meta-strip{grid-template-columns:1fr;}}
+.meta-strip{display:flex;flex-wrap:wrap;gap:14px 44px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
+@media(max-width:700px){.meta-strip{flex-direction:column;}}
 .meta-strip dt{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#7f918a;margin-bottom:3px;}
 .meta-strip dd{color:#e7efec;font-size:1rem;font-weight:600;}
 .meta-strip a{color:var(--em-400);}
@@ -469,6 +469,27 @@ img{max-width:100%;height:auto;display:block;}
 .erd-legend span{display:inline-flex;align-items:center;gap:8px;}
 .erd-legend i{width:16px;height:16px;border-radius:4px;display:block;}
 .sec-tight{padding:72px 0;}
+/* grille de projets et tableaux de résultats */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.proj-grid{grid-template-columns:1fr;}}
+.ps-card.hidden{display:none;}
+.proj-grid .ps-card h3{font-size:1.16rem;line-height:1.3;}
+.proj-grid .ps-result{display:block;margin:2px 0 14px;}
+.proj-grid .ps-result b{display:block;white-space:nowrap;font-size:1.7rem;line-height:1.15;}
+.proj-grid .ps-result span{display:block;margin-top:3px;font-size:.92rem;}
+.proj-grid .ps-links{flex-wrap:nowrap;gap:8px;}
+.proj-grid .link-case,.proj-grid .code-link{padding:9px 13px;font-size:.88rem;white-space:nowrap;}
+.proj-grid .ps-card p{font-size:.98rem;}
+.tbl-wrap{margin-bottom:26px;overflow-x:auto;}
+.tbl-cap{font-family:'JetBrains Mono',monospace;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--em-600);font-weight:700;margin-bottom:10px;}
+table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);font-size:1rem;}
+.rt th{background:var(--ink-950);color:#fff;text-align:left;padding:13px 18px;font-family:'Sora',sans-serif;font-size:.9rem;font-weight:700;}
+.rt td{padding:13px 18px;border-top:1px solid var(--line);color:var(--text-600);vertical-align:top;}
+.rt td:first-child{color:var(--text-900);font-weight:600;}
+.team-note{margin-top:22px;font-size:1rem;color:#b4c2bc;max-width:760px;}
+.team-note b{color:var(--em-400);}
+
 /* vie associative */
 .assoc-card{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--white);}
 @media(max-width:900px){.assoc-card{grid-template-columns:1fr;}}
@@ -538,7 +559,7 @@ img{max-width:100%;height:auto;display:block;}
       <div class="bento-cell"><div class="num"><span>16,47</span>/20</div><div class="lbl">Licence PGP, mention Très Bien</div></div>
       <div class="bento-cell"><div class="num"><span>2,5</span> ans</div><div class="lbl">d'expérience, contrat et stage inclus</div></div>
       <div class="bento-cell"><div class="num"><span>32</span></div><div class="lbl">certifications et badges</div></div>
-      <div class="bento-cell"><div class="num"><span>3</span></div><div class="lbl">projets documentés en détail</div></div>
+      <div class="bento-cell"><div class="num"><span>8</span></div><div class="lbl">projets documentés en détail</div></div>
     </div>
   </div>
 </section>
@@ -551,7 +572,7 @@ img{max-width:100%;height:auto;display:block;}
       <p class="profil-lead">Statisticien-économiste en formation, orienté finance, assurance et gestion des risques, avec plus de deux ans et demi d'expérience, dont le pilotage de la performance.</p>
       <p>Élève ingénieur en 3ᵉ année à l'ENEAM (cycle ISE), je poursuis la spécialisation Finance et Actuariat après une Licence en Planification et Gestion des Projets obtenue avec la mention Très Bien (16,47/20). Mon socle : statistique, économétrie, programmation et bases de données.</p>
       <p>Chez ILYINE Paris (juin 2024 – août 2026), je suis passé de la gestion administrative au pilotage de la performance commerciale : suivi des KPI, tableaux de bord décisionnels et support stratégique à la direction. J'y ai appris à transformer des chiffres en décisions.</p>
-      <p>Je consolide ce socle par des certifications reconnues (DataCamp, IBM SkillsBuild, World Bank OLC) et par la pratique : 2ᵉ place au Concours national de Risk Management de l'AMRAB, participation à Deep Learning IndabaX Bénin 2026, rôle de City Director bénévole pour SMILE MISSION (Linda Dominguez Foundation) à Porto-Novo, et trois projets documentés en accès libre. Je prépare un master à l'horizon 2028.</p>
+      <p>Je consolide ce socle par des certifications reconnues (DataCamp, IBM SkillsBuild, World Bank OLC) et par la pratique : 2ᵉ place au Concours national de Risk Management de l'AMRAB, participation à Deep Learning IndabaX Bénin 2026, rôle de City Director bénévole pour SMILE MISSION (Linda Dominguez Foundation) à Porto-Novo, et 8 projets documentés en accès libre. Je prépare un master à l'horizon 2028.</p>
     </div>
     <div class="reveal">
       <div class="kv-table">
@@ -634,7 +655,7 @@ img{max-width:100%;height:auto;display:block;}
       </div>
     </div>
     <div class="matrix-cta reveal">
-      <p><b>16 de ces 44 compétences sont à la fois apprises et appliquées.</b> La page dédiée relie chaque compétence à la certification qui l'a fait acquérir et au projet ou à l'expérience où elle a été mise en pratique.</p>
+      <p><b>21 de ces 53 compétences sont à la fois apprises et appliquées.</b> La page dédiée relie chaque compétence à la certification qui l'a fait acquérir et au projet ou à l'expérience où elle a été mise en pratique.</p>
       <a class="btn btn-em" href="competences.html">Voir la matrice de preuves →</a>
     </div>
   </div>
@@ -756,7 +777,7 @@ img{max-width:100%;height:auto;display:block;}
       <h2>Certifications</h2>
       <p>32 certifications et badges, chacun vérifiable en ligne ou consultable en PDF, et relié aux compétences qu'il a permis d'acquérir.</p>
     </div>
-    <div class="cert-filters" role="group" aria-label="Filtrer les certifications"><button class="filter-btn active" data-filter="all" aria-pressed="true">Toutes</button><button class="filter-btn" data-filter="me" aria-pressed="false">Suivi-Évaluation</button><button class="filter-btn" data-filter="data" aria-pressed="false">Data, statistique &amp; BI</button><button class="filter-btn" data-filter="prog" aria-pressed="false">Informatique &amp; programmation</button><button class="filter-btn" data-filter="ai" aria-pressed="false">IA</button><button class="filter-btn" data-filter="tools" aria-pressed="false">Outils numériques</button><button class="filter-btn" data-filter="autre" aria-pressed="false">Langues</button></div>
+    <div class="cert-filters" data-target="certGrid" role="group" aria-label="Filtrer"><button class="filter-btn active" data-filter="all" aria-pressed="true">Toutes</button><button class="filter-btn" data-filter="me" aria-pressed="false">Suivi-Évaluation</button><button class="filter-btn" data-filter="data" aria-pressed="false">Data, statistique &amp; BI</button><button class="filter-btn" data-filter="prog" aria-pressed="false">Informatique &amp; programmation</button><button class="filter-btn" data-filter="ai" aria-pressed="false">IA</button><button class="filter-btn" data-filter="tools" aria-pressed="false">Outils numériques</button><button class="filter-btn" data-filter="autre" aria-pressed="false">Langues</button></div>
     <div class="cert-grid" id="certGrid">
       <article class="cert-card reveal" data-cat="data">
         <span class="c-cat">Data Science</span>
@@ -993,54 +1014,99 @@ img{max-width:100%;height:auto;display:block;}
     <div class="sec-head reveal">
       <div class="eyebrow"><span class="n">07</span> Portfolio</div>
       <h2>Projets académiques</h2>
-      <p>Trois études de cas, du relationnel au deep learning, avec la démarche, les résultats et les compétences mobilisées.</p>
+      <p>8 études de cas, du mémoire de Licence au deep learning, avec la démarche, les résultats chiffrés et les compétences mobilisées.</p>
     </div>
 
-    <div class="proj-feature reveal">
-      <div class="pf-visual">
-        <div class="flabel">Projet phare · Deep Learning</div>
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-        <h3>Reconnaissance de chiffres manuscrits (MNIST)</h3>
-      </div>
-      <div class="pf-body">
-        <span class="mod">Deep Learning · Vision par ordinateur</span>
-        <p>Un réseau de neurones convolutif entraîné sur MNIST, évalué sur 10 000 images de test, puis rendu utilisable dans une application Streamlit à quatre modes.</p>
-        <div class="pf-stats">
-          <div class="pf-stat"><b>99,61 %</b><span>précision sur 10 000 images de test</span></div>
-          <div class="pf-stat"><b>CNN</b><span>3 blocs de convolution</span></div>
-          <div class="pf-stat"><b>4 modes</b><span>interface Streamlit</span></div>
-        </div>
-        <div class="tags" style="margin-bottom:16px"><span class="tag">Python</span><span class="tag">TensorFlow / Keras</span><span class="tag">Streamlit</span><span class="tag">scikit-learn</span></div>
-        <div class="pf-links">
-          <a class="link-case" href="projet-mnist.html">Lire l'étude de cas →</a>
-          <a class="code-link" href="https://github.com/Ariscoba001/mnist-reconnaissance-chiffres" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Voir le code ↗</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-secondary">
-      <div class="ps-card reveal">
-        <span class="mod">Base de données · ISE 2</span>
-        <h3>Base de données relationnelle — Cabinet ArchiVision</h3>
-        <div class="ps-result"><b>8 tables · 3FN</b><span>modèle normalisé</span></div>
-        <p>De l'analyse d'un cabinet d'architectes fictif à une base relationnelle normalisée (3FN) sous Access, avec règles de gestion, jeux de données de test et manuel utilisateur.</p>
-        <div class="tags" style="margin-bottom:16px"><span class="tag">Microsoft Access</span><span class="tag">MCD / MLD</span><span class="tag">SQL</span></div>
+    <div class="cert-filters filter-light" data-target="projGrid" role="group" aria-label="Filtrer"><button class="filter-btn active" data-filter="all" aria-pressed="true">Tous</button><button class="filter-btn" data-filter="rech" aria-pressed="false">Recherche et politiques publiques</button><button class="filter-btn" data-filter="econ" aria-pressed="false">Économétrie et statistique</button><button class="filter-btn" data-filter="data" aria-pressed="false">Data science et bases de données</button></div>
+    <div class="proj-grid" id="projGrid">
+      <article class="ps-card reveal" data-cat="rech">
+        <span class="mod">Mémoire de Licence · Binôme</span>
+        <h3>Mémoire de Licence : déterminants de l'abandon scolaire au Bénin</h3>
+        <div class="ps-result"><b>3 262 élèves</b><span>analysés, aire sous la courbe ROC de 0,8975</span></div>
+        <p>Un mémoire en binôme sur les facteurs de l'abandon scolaire chez les adolescents du secondaire, à partir de l'enquête EHCVM 2018 : tests d'association, analyse factorielle multiple et régression logistique.</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">Stata 15</span><span class="tag">R (RStudio)</span><span class="tag">Excel</span></div>
         <div class="ps-links">
-          <a class="link-case" href="projet-archivision.html">Lire l'étude de cas →</a>
-          <a class="code-link" href="https://github.com/Ariscoba001/bd-cabinet-archivision" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Voir le code ↗</a>
+          <a class="link-case" href="projet-memoire.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/Memoire-abandon-scolaire-benin" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
         </div>
-      </div>
-      <div class="ps-card reveal">
-        <span class="mod">Économétrie · Statistique appliquée</span>
+      </article>
+      <article class="ps-card reveal" data-cat="rech">
+        <span class="mod">Projet de groupe · Chef de groupe</span>
+        <h3>Mesure et analyse de la pauvreté au Bénin (EHCVM 2018)</h3>
+        <div class="ps-result"><b>38,5 %</b><span>de la population sous le seuil de pauvreté</span></div>
+        <p>Incidence, profil et inégalités de la pauvreté au Bénin : indices FGT, courbes de Lorenz, indice de Gini et modèles probit et logit, à partir de l'EHCVM 2018.</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">Stata (svy, lorenz)</span><span class="tag">Probit et logit</span></div>
+        <div class="ps-links">
+          <a class="link-case" href="projet-pauvrete.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/pauvrete-benin-ehcvm2018" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
+        </div>
+      </article>
+      <article class="ps-card reveal" data-cat="econ">
+        <span class="mod">Projet de groupe · Chef de groupe</span>
+        <h3>Offre de travail des femmes mariées et endogénéité du salaire</h3>
+        <div class="ps-result"><b>t = 6,14</b><span>test de Wu-Hausman : l'éducation est endogène</span></div>
+        <p>Un modèle de sélection Tobit avec variable explicative endogène, estimé en deux étapes puis par maximum de vraisemblance, sur les données de Mroz (1987).</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">Stata 18</span><span class="tag">tobit, ivregress, ivtobit</span></div>
+        <div class="ps-links">
+          <a class="link-case" href="projet-tobit.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/offre-travail-tobit-endogene" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
+        </div>
+      </article>
+      <article class="ps-card reveal" data-cat="rech">
+        <span class="mod">Projet de groupe · Chef de groupe</span>
+        <h3>Mortalité des enfants hospitalisés à Lwiro (1986 à 1988)</h3>
+        <div class="ps-result"><b>17,5 %</b><span>de létalité hospitalière, IC à 95 % : 15,4 % à 19,9 %</span></div>
+        <p>De dix fichiers hétérogènes à une régression logistique : apurement, analyse descriptive et facteurs de décès chez les nourrissons d'un hôpital du Sud-Kivu.</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">Stata MP 17</span><span class="tag">Do-files</span><span class="tag">Régression logistique</span></div>
+        <div class="ps-links">
+          <a class="link-case" href="projet-lwiro.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/mortalite-infantile-lwiro" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
+        </div>
+      </article>
+      <article class="ps-card reveal" data-cat="econ">
+        <span class="mod">Projet de groupe · Chef de groupe</span>
+        <h3>ANOVA à un facteur : diagnostic des hypothèses et méthodes correctives</h3>
+        <div class="ps-result"><b>6 méthodes</b><span>comparées sur des données de comptage</span></div>
+        <p>Sur la base InsectSprays, l'ANOVA classique conclut à un effet très significatif, mais ses hypothèses sont violées : six approches sont comparées pour corriger le problème.</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">R</span><span class="tag">aov, car, ggplot2, dunn.test</span><span class="tag">LaTeX</span></div>
+        <div class="ps-links">
+          <a class="link-case" href="projet-anova.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/anova-insectsprays" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
+        </div>
+      </article>
+      <article class="ps-card reveal" data-cat="data">
+        <span class="mod">Projet académique · Deep learning</span>
+        <h3>Reconnaissance de chiffres manuscrits (MNIST)</h3>
+        <div class="ps-result"><b>99,61 %</b><span>de précision sur 10 000 images de test</span></div>
+        <p>Un réseau de neurones convolutif entraîné sur MNIST, évalué sur 10 000 images de test, puis rendu utilisable dans une application Streamlit à quatre modes.</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">Python</span><span class="tag">TensorFlow / Keras</span><span class="tag">Streamlit</span><span class="tag">scikit-learn</span></div>
+        <div class="ps-links">
+          <a class="link-case" href="projet-mnist.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/mnist-reconnaissance-chiffres" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
+        </div>
+      </article>
+      <article class="ps-card reveal" data-cat="econ">
+        <span class="mod">Travaux dirigés · Économétrie</span>
         <h3>TD STATA — Analyse statistique de la progression scolaire</h3>
-        <div class="ps-result"><b>11 638 élèves</b><span>R² final de 22,7 %</span></div>
+        <div class="ps-result"><b>11 638 élèves</b><span>après apurement, R² final de 22,7 %</span></div>
         <p>Du fichier brut à la régression multivariée : apurement d'une base de 11 654 collégiens, statistiques descriptives, tests d'hypothèses et modélisation de l'évolution des moyennes.</p>
         <div class="tags" style="margin-bottom:16px"><span class="tag">STATA</span><span class="tag">Do-files</span><span class="tag">Régression linéaire</span></div>
         <div class="ps-links">
-          <a class="link-case" href="projet-stata.html">Lire l'étude de cas →</a>
-          <a class="code-link" href="https://github.com/Ariscoba001/td-stata-analyse-statistique" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Voir le code ↗</a>
+          <a class="link-case" href="projet-stata.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/td-stata-analyse-statistique" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
         </div>
-      </div>
+      </article>
+      <article class="ps-card reveal" data-cat="data">
+        <span class="mod">Base de données · ISE 2</span>
+        <h3>Base de données relationnelle — Cabinet ArchiVision</h3>
+        <div class="ps-result"><b>8 tables · 3FN</b><span>modèle relationnel normalisé</span></div>
+        <p>De l'analyse d'un cabinet d'architectes fictif à une base relationnelle normalisée (3FN) sous Access, avec règles de gestion, jeux de données de test et manuel utilisateur.</p>
+        <div class="tags" style="margin-bottom:16px"><span class="tag">Microsoft Access</span><span class="tag">MCD / MLD</span><span class="tag">SQL</span></div>
+        <div class="ps-links">
+          <a class="link-case" href="projet-archivision.html">Étude de cas →</a>
+          <a class="code-link" href="https://github.com/Ariscoba001/bd-cabinet-archivision" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Code ↗</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1089,18 +1155,22 @@ img{max-width:100%;height:auto;display:block;}
     });
   });
 
-  var fb=document.querySelectorAll('.filter-btn');
-  fb.forEach(function(b){
-    b.addEventListener('click',function(){
-      fb.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
-      b.classList.add('active');b.setAttribute('aria-pressed','true');
-      var f=b.dataset.filter;
-      document.querySelectorAll('[data-cat]').forEach(function(c){
-        var show=(f==='all')||(c.dataset.cat===f);
-        c.classList.toggle('hidden',!show);
+  document.querySelectorAll('.cert-filters').forEach(function(bar){
+    var btns=bar.querySelectorAll('.filter-btn');
+    var grid=document.getElementById(bar.dataset.target);
+    if(!grid){return;}
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
+        b.classList.add('active');b.setAttribute('aria-pressed','true');
+        var f=b.dataset.filter;
+        grid.querySelectorAll('[data-cat]').forEach(function(c){
+          var show=(f==='all')||(c.dataset.cat===f);
+          c.classList.toggle('hidden',!show);
+        });
+        var cnt=document.getElementById('certCount');
+        if(cnt && bar.dataset.target==='certGrid'){cnt.textContent=grid.querySelectorAll('[data-cat]:not(.hidden)').length;}
       });
-      var cnt=document.getElementById('certCount');
-      if(cnt){cnt.textContent=document.querySelectorAll('[data-cat]:not(.hidden)').length;}
     });
   });
 

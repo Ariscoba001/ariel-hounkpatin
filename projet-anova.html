@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certifications et compétences acquises — Ariel Angelo Kolawolé HOUNKPATIN</title>
-<meta name="description" content="32 certifications et badges, avec pour chacun les compétences acquises, les projets où elles ont été mobilisées et le lien de vérification.">
+<title>ANOVA à un facteur : diagnostic des hypothèses et méthodes correctives — Ariel Angelo Kolawolé HOUNKPATIN</title>
+<meta name="description" content="Sur la base InsectSprays, l&#x27;ANOVA classique conclut à un effet très significatif, mais ses hypothèses sont violées : six approches sont comparées pour corriger le problème.">
 <meta name="theme-color" content="#0d1210">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Certifications et compétences acquises — Ariel Angelo Kolawolé HOUNKPATIN">
-<meta property="og:description" content="32 certifications et badges, avec pour chacun les compétences acquises, les projets où elles ont été mobilisées et le lien de vérification.">
+<meta property="og:title" content="ANOVA à un facteur : diagnostic des hypothèses et méthodes correctives — Ariel Angelo Kolawolé HOUNKPATIN">
+<meta property="og:description" content="Sur la base InsectSprays, l&#x27;ANOVA classique conclut à un effet très significatif, mais ses hypothèses sont violées : six approches sont comparées pour corriger le problème.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1210'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='Arial' font-weight='800' font-size='14' fill='%234fd6a4'%3EAH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -525,8 +525,8 @@ table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;bo
       <a href="competences.html">Compétences</a>
       <a href="index.html#parcours">Parcours</a>
       <a href="index.html#vie-associative">Vie associative</a>
-      <a href="certifications.html" class="active" aria-current="page">Certifications</a>
-      <a href="index.html#projets">Projets</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="index.html#projets" class="active" aria-current="page">Projets</a>
       <a class="nav-cv" href="cv-ariel-hounkpatin.pdf" download>Mon CV ↓</a>
     </nav>
     <a href="index.html#contact" class="nav-cta">Me contacter</a>
@@ -536,278 +536,95 @@ table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;bo
 <main id="main">
 <section class="page-hero">
   <div class="wrap">
-    <a class="crumb" href="index.html#certifications">← Retour à l'accueil</a>
-    <h1>Certifications et compétences acquises</h1>
-    <p class="lead">Chaque certification est accompagnée de ce qu'elle m'a permis d'apprendre, des projets ou expériences où je l'ai mobilisé, et d'un moyen de la vérifier.</p>
-    <div class="stat-strip">
-      <div><b>32</b><span>certifications et badges</span></div>
-      <div><b>29</b><span>compétences couvertes</span></div>
-      <div><b><span id="certCount">32</span></b><span>affichées</span></div>
+    <a class="crumb" href="index.html#projets">← Tous les projets</a>
+    <h1>ANOVA à un facteur : diagnostic des hypothèses et méthodes correctives</h1>
+    <p class="lead">Sur la base InsectSprays, l'ANOVA classique conclut à un effet très significatif, mais ses hypothèses sont violées : six approches sont comparées pour corriger le problème.</p>
+    <dl class="meta-strip"><div><dt>Cadre</dt><dd>Projet de groupe · Statistique inférentielle</dd></div><div><dt>Outils</dt><dd>R · aov, car, ggplot2, dunn.test · LaTeX</dd></div><div><dt>Équipe</dt><dd>Groupe de 4 : Ariel A. K. HOUNKPATIN (chef de groupe), Comlan Honorat ASSOGBA, Antifa BADAROU et David NONVIDE</dd></div><div><dt>Code source</dt><dd><a href="https://github.com/Ariscoba001/anova-insectsprays" target="_blank" rel="noopener">github.com/Ariscoba001/anova-insectsprays ↗</a></dd></div></dl>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap cs-intro">
+    <div class="cs-box reveal"><h2>Contexte</h2><p>InsectSprays provient de l'expérience agricole de Beall (1942) et est intégrée à R : six insecticides (A à F), chacun appliqué sur 12 parcelles, et le nombre d'insectes dénombrés après traitement. Des comptages d'événements discrets laissent présager des difficultés pour l'ANOVA classique.</p></div>
+    <div class="cs-box dark reveal"><h2>Objectif</h2><p>Vérifier si les six insecticides ont la même efficacité moyenne, en testant sérieusement les hypothèses de l'ANOVA puis en comparant plusieurs méthodes correctives lorsqu'elles ne sont pas satisfaites.</p></div>
+  </div>
+</section>
+
+<section class="results" aria-label="Résultats clés">
+  <div class="wrap"><div class="results-grid">
+    <div class="res reveal"><b>72</b><span>parcelles : 6 insecticides appliqués sur 12 parcelles chacun</span></div>
+    <div class="res reveal"><b>F = 34,7</b><span>ANOVA classique, mais normalité et homogénéité rejetées</span></div>
+    <div class="res reveal"><b>p = 0,004</b><span>test de Levene : les variances ne sont pas homogènes</span></div>
+    <div class="res reveal"><b>6</b><span>approches comparées pour corriger les violations</span></div>
+  </div></div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow">Démarche</div><h2>Comment le projet a été mené</h2></div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><div><h3>Cadre théorique</h3><p>Modèle à un facteur, hypothèses (indépendance, normalité, homogénéité des variances), décomposition de la variance, statistique de Fisher et comparaisons multiples.</p></div></div>
+      <div class="step reveal"><div class="num">2</div><div><h3>Analyse descriptive</h3><p>Les insecticides A, B et F laissent subsister 14,5 à 16,7 insectes en moyenne, contre 2,1 à 4,9 pour C, D et E. Le rapport variance sur moyenne par groupe, entre 1,19 et 2,31, révèle une surdispersion.</p></div></div>
+      <div class="step reveal"><div class="num">3</div><div><h3>ANOVA classique</h3><p>F(5, 66) = 34,7 (p &lt; 2e-16) : le type d'insecticide explique 72,4 % de la variabilité totale.</p></div></div>
+      <div class="step reveal"><div class="num">4</div><div><h3>Diagnostic des hypothèses</h3><p>Normalité des résidus rejetée (Shapiro-Wilk, p = 0,022) et homogénéité des variances rejetée (Levene, p = 0,004). Le test de Bartlett est à lire avec prudence car il est sensible à la non-normalité.</p></div></div>
+      <div class="step reveal"><div class="num">5</div><div><h3>Méthodes correctives</h3><p>Transformations racine carrée, logarithme et Box-Cox, ANOVA de Welch, test de Kruskal-Wallis avec post-hoc de Dunn, et comparaisons de Tukey HSD.</p></div></div>
+      <div class="step reveal"><div class="num">6</div><div><h3>Synthèse comparative</h3><p>Les six approches concluent toutes à un effet significatif. La racine carrée suivie d'une ANOVA et le test de Kruskal-Wallis sont les approches recommandées.</p></div></div>
     </div>
   </div>
 </section>
-<section class="sec-tight">
+
+<section style="background:var(--paper)">
   <div class="wrap">
-    <div class="cert-filters filter-light" data-target="certGrid" role="group" aria-label="Filtrer"><button class="filter-btn active" data-filter="all" aria-pressed="true">Toutes</button><button class="filter-btn" data-filter="me" aria-pressed="false">Suivi-Évaluation</button><button class="filter-btn" data-filter="data" aria-pressed="false">Data, statistique &amp; BI</button><button class="filter-btn" data-filter="prog" aria-pressed="false">Informatique &amp; programmation</button><button class="filter-btn" data-filter="ai" aria-pressed="false">IA</button><button class="filter-btn" data-filter="tools" aria-pressed="false">Outils numériques</button><button class="filter-btn" data-filter="autre" aria-pressed="false">Langues</button></div>
-    <div class="fiche-grid" id="certGrid">
-      <article class="fiche reveal" id="cert-dc-scientist" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Science</span><span class="c-date">7 sept. 2026</span></div>
-        <h3>Associate Data Scientist</h3>
-        <div class="c-org">DataCamp</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-python">Python pour l'analyse de données</a><a class="chip chip-cert" href="competences.html#sk-data_prep">Préparation et nettoyage des données</a><a class="chip chip-cert" href="competences.html#sk-ml">Machine learning (modélisation supervisée)</a><a class="chip chip-cert" href="competences.html#sk-model_eval">Évaluation de modèles (matrice de confusion, analyse d'erreurs)</a><a class="chip chip-cert" href="competences.html#sk-inference">Statistique inférentielle et tests d'hypothèses (Chi², t, ANOVA)</a><a class="chip chip-cert" href="competences.html#sk-data_viz">Visualisation et restitution des données</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a></div></div>
-        <div class="fiche-foot"><span class="ref">Certificat n° DSA0018164983966</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/DataCamp-Associate-Data-Scientist.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-dc-analyst" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">24 août 2026</span></div>
-        <h3>Associate Data Analyst</h3>
-        <div class="c-org">DataCamp</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-sql">SQL et requêtes sur bases relationnelles</a><a class="chip chip-cert" href="competences.html#sk-data_prep">Préparation et nettoyage des données</a><a class="chip chip-cert" href="competences.html#sk-data_viz">Visualisation et restitution des données</a><a class="chip chip-cert" href="competences.html#sk-stat_desc">Statistiques descriptives (uni-, bi- et trivariées)</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-archivision.html">Base de données ArchiVision</a><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
-        <div class="fiche-foot"><span class="ref">Certificat n° DAA0010441247470</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/DataCamp-Associate-Data-Analyst.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-wb-me" data-cat="me">
-        <div class="fiche-top"><span class="c-cat">Suivi-Évaluation</span><span class="c-date">10 août 2026</span></div>
-        <h3>Building Blocks of Effective National M&amp;E Systems</h3>
-        <div class="c-org">World Bank Group — Global Evaluation Initiative (OLC)</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-sys_me">Systèmes nationaux de suivi-évaluation</a><a class="chip chip-cert" href="competences.html#sk-kpi">Indicateurs de performance (KPI) et reporting</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">ILYINE Paris</a><a class="chip chip-experience" href="index.html#parcours">INRAB (stage)</a></div></div>
-        <div class="fiche-foot"><span class="ref">Enregistrement n° 0000817560-0000497028</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/WorldBank-OLC-ME-Systems.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-kaya-meal" data-cat="me">
-        <div class="fiche-top"><span class="c-cat">Suivi-Évaluation</span><span class="c-date">19 oct. 2023</span></div>
-        <h3>MEAL dans les situations d'urgence</h3>
-        <div class="c-org">Humanitarian Leadership Academy (Kaya)</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-meal">MEAL : suivi, évaluation, redevabilité et apprentissage</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Vérifiable par QR code sur le PDF</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-MEAL-situations-urgence.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-kaya-hum" data-cat="me">
-        <div class="fiche-top"><span class="c-cat">Humanitaire</span><span class="c-date">26 oct. 2023</span></div>
-        <h3>Mettre sur pied et mener une opération humanitaire</h3>
-        <div class="c-org">Humanitarian Leadership Academy (Kaya)</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-humanitarian">Montage et conduite d'une opération humanitaire</a><a class="chip chip-cert" href="competences.html#sk-pm">Planification et suivi de projets</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">ILYINE Paris</a></div></div>
-        <div class="fiche-foot"><span class="ref">Vérifiable par QR code sur le PDF</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-Operation-humanitaire.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-path" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Data Analytics Fluency Pathway</h3>
-        <div class="c-org">IBM SkillsBuild — parcours de 6 micro-certifications</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-data_fund">Fondamentaux de la donnée (sources, types, cycle de vie)</a><a class="chip chip-cert" href="competences.html#sk-data_collect">Collecte, classification et organisation des données</a><a class="chip chip-cert" href="competences.html#sk-data_prep">Préparation et nettoyage des données</a><a class="chip chip-cert" href="competences.html#sk-data_viz">Visualisation et restitution des données</a><a class="chip chip-cert" href="competences.html#sk-stat_desc">Statistiques descriptives (uni-, bi- et trivariées)</a><a class="chip chip-cert" href="competences.html#sk-inference">Statistique inférentielle et tests d'hypothèses (Chi², t, ANOVA)</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a></div></div>
-        <div class="fiche-foot"><span class="ref">Parcours regroupant les six badges IBM ci-dessous</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/IBM-Data-Analytics-Fluency-Pathway.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-fund" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Data Fundamentals</h3>
-        <div class="c-org">IBM SkillsBuild</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-data_fund">Fondamentaux de la donnée (sources, types, cycle de vie)</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Badge Credly</span><a class="btn-proof" href="https://www.credly.com/badges/8727579b-473b-4ce1-ade9-244f37376ab0" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-collect" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Data Collection and Analysis</h3>
-        <div class="c-org">IBM SkillsBuild</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-data_collect">Collecte, classification et organisation des données</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Badge Credly</span><a class="btn-proof" href="https://www.credly.com/badges/e21b07fe-bc04-450d-9958-1b15f7989d34" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-prep" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Data Preparation for Analysis</h3>
-        <div class="c-org">IBM SkillsBuild</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-data_prep">Préparation et nettoyage des données</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
-        <div class="fiche-foot"><span class="ref">Badge Credly</span><a class="btn-proof" href="https://www.credly.com/badges/6ae54d1d-73ee-4038-a299-1d2d9f9d200f" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-class" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Data Classification</h3>
-        <div class="c-org">IBM SkillsBuild</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-data_collect">Collecte, classification et organisation des données</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Badge Credly</span><a class="btn-proof" href="https://www.credly.com/badges/b579ccd9-02c9-44f7-827d-9a119fbce756" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-viz" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Data Visualization and Presentation</h3>
-        <div class="c-org">IBM SkillsBuild</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-data_viz">Visualisation et restitution des données</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
-        <div class="fiche-foot"><span class="ref">Badge Credly</span><a class="btn-proof" href="https://www.credly.com/badges/43372051-9892-4d35-bb21-1f82ebee1ad1" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-ibm-stats" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Statistique</span><span class="c-date">11 août 2026</span></div>
-        <h3>Introduction to Inferential and Descriptive Statistics</h3>
-        <div class="c-org">IBM SkillsBuild</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-stat_desc">Statistiques descriptives (uni-, bi- et trivariées)</a><a class="chip chip-cert" href="competences.html#sk-inference">Statistique inférentielle et tests d'hypothèses (Chi², t, ANOVA)</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-pauvrete.html">Pauvreté au Bénin</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a><a class="chip chip-project" href="projet-tobit.html">Offre de travail (Tobit)</a><a class="chip chip-project" href="projet-anova.html">ANOVA InsectSprays</a></div></div>
-        <div class="fiche-foot"><span class="ref">Badge Credly</span><a class="btn-proof" href="https://www.credly.com/badges/ee269189-4f33-4971-b7c1-976ed4cf9103" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-coursera-excel" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Data Analytics</span><span class="c-date">11 août 2026</span></div>
-        <h3>Excel Fundamentals for Data Analysis</h3>
-        <div class="c-org">Coursera — Macquarie University</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-excel">Excel pour l'analyse de données</a><a class="chip chip-cert" href="competences.html#sk-data_prep">Préparation et nettoyage des données</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a><a class="chip chip-project" href="projet-stata.html">TD STATA</a><a class="chip chip-project" href="projet-memoire.html">Mémoire de Licence</a><a class="chip chip-project" href="projet-lwiro.html">Mortalité à Lwiro</a></div></div>
-        <div class="fiche-foot"><span class="ref">Vérification Coursera</span><a class="btn-proof" href="https://coursera.org/verify/KA2RSGYNPVER" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-kaggle-prog" data-cat="prog">
-        <div class="fiche-top"><span class="c-cat">Programmation</span><span class="c-date">20 janv. 2026</span></div>
-        <h3>Intro to Programming</h3>
-        <div class="c-org">Kaggle</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-python">Python pour l'analyse de données</a><a class="chip chip-cert" href="competences.html#sk-prog_logic">Logique de programmation et pensée algorithmique</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-project" href="projet-mnist.html">Projet MNIST (CNN)</a></div></div>
-        <div class="fiche-foot"><span class="ref">Certificat Kaggle Learn</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/Kaggle-Intro-to-Programming.png" target="_blank" rel="noopener">Voir le certificat ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-resp" data-cat="ai">
-        <div class="fiche-top"><span class="c-cat">IA Responsable</span><span class="c-date">11 août 2026</span></div>
-        <h3>Responsible AI</h3>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-ai_ethics">IA responsable : principes et gouvernance</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA1305687081120260527</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Responsible-AI.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-basics" data-cat="ai">
-        <div class="fiche-top"><span class="c-cat">IA</span><span class="c-date">11 août 2026</span></div>
-        <h3>AI basics</h3>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-ai_fund">Fondamentaux de l'intelligence artificielle</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA0107166081120262022</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-AI-basics.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-all" data-cat="ai">
-        <div class="fiche-top"><span class="c-cat">IA</span><span class="c-date">11 août 2026</span></div>
-        <h3>AI for all</h3>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-ai_fund">Fondamentaux de l'intelligence artificielle</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA7341538081120262026</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-AI-for-all.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-gen" data-cat="ai">
-        <div class="fiche-top"><span class="c-cat">IA</span><span class="c-date">11 août 2026</span></div>
-        <h3>Generative AI</h3>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-genai">IA générative</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA2510012081120262032</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Generative-AI.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-copilot" data-cat="ai">
-        <div class="fiche-top"><span class="c-cat">Productivité</span><span class="c-date">11 août 2026</span></div>
-        <h3>Boost Your Productivity with Copilot</h3>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-ai_tools">Assistants IA pour la productivité (Copilot)</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA4994448081120262047</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Boost-Productivity-Copilot.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-search" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Recherche</span><span class="c-date">11 août 2026</span></div>
-        <h3>Internet Search and beyond</h3>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-info_search">Recherche d'information avancée</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA3677971081120262038</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Internet-Search-and-beyond.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-cebelae" data-cat="autre">
-        <div class="fiche-top"><span class="c-cat">Langue</span><span class="c-date">17 janv. 2024</span></div>
-        <h3>Test of English for University Purpose — niveau B2</h3>
-        <div class="c-org">Centre Béninois des Langues Étrangères, Université d'Abomey-Calavi</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-english">Anglais académique (niveau B2 du CECRL)</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Enregistrement n° 15673321</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/CEBELAE-Test-of-English-B2.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-sap-bo" data-cat="data">
-        <div class="fiche-top"><span class="c-cat">Business Intelligence</span><span class="c-date">29 sept. 2026</span></div>
-        <h3>Introducing SAP BusinessObjects BI Solutions</h3>
-        <div class="c-org">SAP Learning — niveau débutant</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-bi">Business intelligence et outils de reporting (SAP BusinessObjects)</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Badge numérique SAP Learning</span><a class="btn-proof" href="https://badger.learning.sap.com/verify/xapef-mygem-puban-micur-cufuh" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-cs-code" data-cat="prog">
-        <div class="fiche-top"><span class="c-cat">Programmation</span><span class="c-date">14 août 2026</span></div>
-        <h3>Code Yourself! An Introduction to Programming</h3>
-        <div class="c-org">Coursera — University of Edinburgh et Universidad ORT Uruguay</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-prog_logic">Logique de programmation et pensée algorithmique</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Vérification Coursera</span><a class="btn-proof" href="https://coursera.org/verify/YJN3KKDMEHYY" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-cs-iot" data-cat="prog">
-        <div class="fiche-top"><span class="c-cat">Informatique</span><span class="c-date">19 août 2026</span></div>
-        <h3>IoT (Internet of Things) Wireless &amp; Cloud Computing Emerging Technologies</h3>
-        <div class="c-org">Coursera — Yonsei University</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-iot">Internet des objets et cloud computing (notions)</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Vérification Coursera</span><a class="btn-proof" href="https://coursera.org/verify/FKL8QZQKA7QY" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-cs-infolit" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Recherche d'information</span><span class="c-date">19 août 2026</span></div>
-        <h3>Basic Information Literacy</h3>
-        <div class="c-org">Coursera — The State University of New York (SUNY)</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-info_lit">Culture de l'information : évaluer et utiliser des sources</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Vérification Coursera</span><a class="btn-proof" href="https://coursera.org/verify/SE2DZR3QS7ND" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-m365-start" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Microsoft 365</span><span class="c-date">14 août 2026</span></div>
-        <h3>Getting Started With Microsoft 365</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-m365">Suite Microsoft 365 : prise en main et productivité</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA6424770081420261404</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Getting-Started.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-m365-collab" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Microsoft 365</span><span class="c-date">14 août 2026</span></div>
-        <h3>Collaborating With Microsoft 365</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-m365">Suite Microsoft 365 : prise en main et productivité</a><a class="chip chip-cert" href="competences.html#sk-collab">Collaboration et travail en ligne</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA6016905081420261324</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Collaborating.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-m365-data" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Microsoft 365</span><span class="c-date">14 août 2026</span></div>
-        <h3>Managing Data With Microsoft 365</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-m365">Suite Microsoft 365 : prise en main et productivité</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA1961145081420261339</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Managing-Data.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-m365-projects" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Microsoft 365</span><span class="c-date">14 août 2026</span></div>
-        <h3>Managing Projects with Microsoft 365</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-m365">Suite Microsoft 365 : prise en main et productivité</a><a class="chip chip-cert" href="competences.html#sk-pm">Planification et suivi de projets</a></div></div>
-        <div><div class="fb-label">Mobilisées dans</div><div class="chips"><a class="chip chip-experience" href="index.html#parcours">ILYINE Paris</a></div></div>
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA8145820081420261331</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Managing-Projects.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-m365-optimise" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Microsoft 365</span><span class="c-date">14 août 2026</span></div>
-        <h3>Optimising Your Work with Microsoft 365</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-m365">Suite Microsoft 365 : prise en main et productivité</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA6880131081420261350</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Optimising-Work.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-online" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Travail collaboratif</span><span class="c-date">14 août 2026</span></div>
-        <h3>Working and collaborating online</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-collab">Collaboration et travail en ligne</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA7403768081420261448</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Working-Collaborating-Online.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="fiche reveal" id="cert-mtn-devices" data-cat="tools">
-        <div class="fiche-top"><span class="c-cat">Culture numérique</span><span class="c-date">14 août 2026</span></div>
-        <h3>Working With Computers and Devices</h3>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <div><div class="fb-label">Compétences acquises</div><div class="chips"><a class="chip chip-cert" href="competences.html#sk-it_basics">Culture informatique : ordinateurs, appareils et outils numériques</a></div></div>
-        
-        <div class="fiche-foot"><span class="ref">Certificat n° SKA1128603081420261422</span><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Working-With-Computers-Devices.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
+    <div class="sec-head reveal"><div class="eyebrow">Résultats</div><h2>Ce que montrent les résultats</h2></div>
+    <div class="tbl-wrap reveal"><div class="tbl-cap">Comparaison des approches</div><table class="rt"><thead><tr><th>Méthode</th><th>Résultat</th><th>Avis du rapport</th></tr></thead><tbody><tr><td>ANOVA classique</td><td>p &lt; 2e-16, hypothèses violées</td><td>Non validée</td></tr><tr><td>Racine carrée puis ANOVA</td><td>p &lt; 2e-16, hypothèses satisfaites</td><td>Recommandée</td></tr><tr><td>Logarithme puis ANOVA</td><td>p &lt; 2e-16, hypothèses partiellement satisfaites</td><td>Partielle</td></tr><tr><td>Box-Cox puis ANOVA</td><td>lambda = 0,284, hypothèses satisfaites</td><td>Alternative</td></tr><tr><td>ANOVA de Welch</td><td>F = 36,065, p = 8,0e-12</td><td>Partielle</td></tr><tr><td>Kruskal-Wallis</td><td>chi2(5) = 54,69, p = 1,5e-10</td><td>Recommandée</td></tr></tbody></table></div>
+    <div class="fig-grid">
+      <figure class="fig reveal "><img src="img-anova-boxplot.webp" width="672" height="432" loading="lazy" alt="Nombre d&#x27;insectes par type d&#x27;insecticide."><figcaption>Nombre d'insectes par type d'insecticide.</figcaption></figure>
+      <figure class="fig reveal "><img src="img-anova-meanvar.webp" width="672" height="432" loading="lazy" alt="Relation entre moyenne et variance par groupe."><figcaption>Relation entre moyenne et variance par groupe.</figcaption></figure>
+      <figure class="fig reveal "><img src="img-anova-sqrt.webp" width="672" height="480" loading="lazy" alt="Boîtes à moustaches avant et après transformation racine carrée."><figcaption>Boîtes à moustaches avant et après transformation racine carrée.</figcaption></figure>
+      <figure class="fig reveal "><img src="img-anova-tukey.webp" width="672" height="672" loading="lazy" alt="Intervalles de confiance de Tukey HSD sur les données transformées."><figcaption>Intervalles de confiance de Tukey HSD sur les données transformées.</figcaption></figure>
     </div>
   </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow">Constats</div><h2>Principaux enseignements</h2></div>
+    <ul class="findings">
+      <li class="reveal">Les données de comptage violent la normalité et l'homogénéité des variances : la variance croît avec la moyenne, comme pour une loi de Poisson.</li>
+      <li class="reveal">La transformation racine carrée corrige simultanément les deux violations. Box-Cox confirme ce choix : le paramètre estimé (0,284) est proche de 0,5.</li>
+      <li class="reveal">Les comparaisons de Tukey HSD distinguent deux groupes homogènes : A, B et F d'une part (moins efficaces), C, D et E d'autre part (plus efficaces).</li>
+      <li class="reveal">La conclusion est la même avec toutes les méthodes : l'effet du type d'insecticide est hautement significatif.</li>
+    </ul>
+  </div>
+</section>
+
+<section style="background:var(--paper)">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow">Compétences</div><h2>Compétences mobilisées</h2><p>Chaque compétence renvoie à la matrice de preuves, avec le nombre de sources qui l'ont fait acquérir.</p></div>
+    <div class="dom-skills reveal">
+      <div><h3>Statistique &amp; Économétrie</h3><div><a class="skill-pill" href="competences.html#sk-anova"><span>ANOVA, tests non paramétriques et diagnostic des hypothèses</span><em>1 source d'apprentissage</em></a><a class="skill-pill" href="competences.html#sk-inference"><span>Statistique inférentielle et tests d'hypothèses (Chi², t, ANOVA)</span><em>4 sources d'apprentissage</em></a></div></div>
+      <div><h3>Data &amp; Programmation</h3><div><a class="skill-pill" href="competences.html#sk-r_lang"><span>Programmation sous R</span><em>mise en pratique directe</em></a><a class="skill-pill" href="competences.html#sk-data_viz"><span>Visualisation et restitution des données</span><em>4 sources d'apprentissage</em></a></div></div>
+      <div><h3>Gestion de projet &amp; Performance</h3><div><a class="skill-pill" href="competences.html#sk-team_lead"><span>Pilotage d'un travail de groupe (chef de groupe)</span><em>mise en pratique directe</em></a></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="eyebrow">Livrables</div><h2>Ce qui est publié</h2></div>
+    <div class="deliv">
+      <ul class="reveal"><li><b>Rapport-ANOVA-InsectSprays.pdf</b> : rapport de 36 pages avec les extraits de code R</li><li><b>Figures du rapport</b></li><li><b>README.md</b> : démarche, résultats et pistes d'amélioration</li></ul>
+      <div class="code-card reveal">
+        <h3>Tout est consultable</h3>
+        <p>Le dépôt GitHub contient les fichiers du projet et un README qui explique la structure et la démarche.</p>
+        <a class="code-link" href="https://github.com/Ariscoba001/anova-insectsprays" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Ouvrir le dépôt ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="padding-top:0">
+  <div class="wrap pager"><a class="prev" href="projet-lwiro.html"><small>← Projet précédent</small><b>Mortalité des enfants hospitalisés à Lwiro (1986 à 1988)</b></a><a class="next" href="projet-mnist.html"><small>Projet suivant →</small><b>Reconnaissance de chiffres manuscrits (MNIST)</b></a></div>
 </section>
 </main>
 <footer>

@@ -341,8 +341,8 @@ img{max-width:100%;height:auto;display:block;}
 .stat-strip{display:flex;gap:44px;flex-wrap:wrap;margin-top:36px;}
 .stat-strip div b{font-family:'Sora',sans-serif;font-size:2.4rem;color:var(--em-400);display:block;line-height:1.1;}
 .stat-strip div span{color:#9fb0a8;font-size:.94rem;}
-.meta-strip{display:grid;grid-template-columns:repeat(3,auto);gap:14px 44px;justify-content:start;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
-@media(max-width:700px){.meta-strip{grid-template-columns:1fr;}}
+.meta-strip{display:flex;flex-wrap:wrap;gap:14px 44px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);}
+@media(max-width:700px){.meta-strip{flex-direction:column;}}
 .meta-strip dt{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#7f918a;margin-bottom:3px;}
 .meta-strip dd{color:#e7efec;font-size:1rem;font-weight:600;}
 .meta-strip a{color:var(--em-400);}
@@ -469,6 +469,27 @@ img{max-width:100%;height:auto;display:block;}
 .erd-legend span{display:inline-flex;align-items:center;gap:8px;}
 .erd-legend i{width:16px;height:16px;border-radius:4px;display:block;}
 .sec-tight{padding:72px 0;}
+/* grille de projets et tableaux de résultats */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.proj-grid{grid-template-columns:1fr;}}
+.ps-card.hidden{display:none;}
+.proj-grid .ps-card h3{font-size:1.16rem;line-height:1.3;}
+.proj-grid .ps-result{display:block;margin:2px 0 14px;}
+.proj-grid .ps-result b{display:block;white-space:nowrap;font-size:1.7rem;line-height:1.15;}
+.proj-grid .ps-result span{display:block;margin-top:3px;font-size:.92rem;}
+.proj-grid .ps-links{flex-wrap:nowrap;gap:8px;}
+.proj-grid .link-case,.proj-grid .code-link{padding:9px 13px;font-size:.88rem;white-space:nowrap;}
+.proj-grid .ps-card p{font-size:.98rem;}
+.tbl-wrap{margin-bottom:26px;overflow-x:auto;}
+.tbl-cap{font-family:'JetBrains Mono',monospace;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--em-600);font-weight:700;margin-bottom:10px;}
+table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);font-size:1rem;}
+.rt th{background:var(--ink-950);color:#fff;text-align:left;padding:13px 18px;font-family:'Sora',sans-serif;font-size:.9rem;font-weight:700;}
+.rt td{padding:13px 18px;border-top:1px solid var(--line);color:var(--text-600);vertical-align:top;}
+.rt td:first-child{color:var(--text-900);font-weight:600;}
+.team-note{margin-top:22px;font-size:1rem;color:#b4c2bc;max-width:760px;}
+.team-note b{color:var(--em-400);}
+
 /* vie associative */
 .assoc-card{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--white);}
 @media(max-width:900px){.assoc-card{grid-template-columns:1fr;}}
@@ -553,7 +574,7 @@ img{max-width:100%;height:auto;display:block;}
 
 <section style="background:var(--paper)">
   <div class="wrap">
-    <div class="sec-head reveal"><div class="eyebrow">Résultats</div><h2>Ce que montrent les figures</h2></div>
+    <div class="sec-head reveal"><div class="eyebrow">Résultats</div><h2>Ce que montrent les résultats</h2></div>
     <div class="fig-grid">
       <figure class="fig reveal wide"><img src="img-mnist-training.webp" width="1500" height="536" loading="lazy" alt="Courbes de loss et d&#x27;accuracy : entraînement et validation, époque par époque."><figcaption>Courbes de loss et d'accuracy : entraînement et validation, époque par époque.</figcaption></figure>
       <figure class="fig reveal "><img src="img-mnist-confusion.webp" width="1000" height="884" loading="lazy" alt="Matrice de confusion sur le jeu de test (précision globale de 99,61 %)."><figcaption>Matrice de confusion sur le jeu de test (précision globale de 99,61 %).</figcaption></figure>
@@ -586,7 +607,7 @@ img{max-width:100%;height:auto;display:block;}
 </section>
 
 <section class="sec-tight" style="padding-top:0">
-  <div class="wrap pager"><span></span><a class="next" href="projet-archivision.html"><small>Projet suivant →</small><b>Base de données relationnelle — Cabinet ArchiVision</b></a></div>
+  <div class="wrap pager"><a class="prev" href="projet-anova.html"><small>← Projet précédent</small><b>ANOVA à un facteur : diagnostic des hypothèses et méthodes correctives</b></a><a class="next" href="projet-stata.html"><small>Projet suivant →</small><b>TD STATA — Analyse statistique de la progression scolaire</b></a></div>
 </section>
 </main>
 <footer>
@@ -617,18 +638,22 @@ img{max-width:100%;height:auto;display:block;}
     });
   });
 
-  var fb=document.querySelectorAll('.filter-btn');
-  fb.forEach(function(b){
-    b.addEventListener('click',function(){
-      fb.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
-      b.classList.add('active');b.setAttribute('aria-pressed','true');
-      var f=b.dataset.filter;
-      document.querySelectorAll('[data-cat]').forEach(function(c){
-        var show=(f==='all')||(c.dataset.cat===f);
-        c.classList.toggle('hidden',!show);
+  document.querySelectorAll('.cert-filters').forEach(function(bar){
+    var btns=bar.querySelectorAll('.filter-btn');
+    var grid=document.getElementById(bar.dataset.target);
+    if(!grid){return;}
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
+        b.classList.add('active');b.setAttribute('aria-pressed','true');
+        var f=b.dataset.filter;
+        grid.querySelectorAll('[data-cat]').forEach(function(c){
+          var show=(f==='all')||(c.dataset.cat===f);
+          c.classList.toggle('hidden',!show);
+        });
+        var cnt=document.getElementById('certCount');
+        if(cnt && bar.dataset.target==='certGrid'){cnt.textContent=grid.querySelectorAll('[data-cat]:not(.hidden)').length;}
       });
-      var cnt=document.getElementById('certCount');
-      if(cnt){cnt.textContent=document.querySelectorAll('[data-cat]:not(.hidden)').length;}
     });
   });
 
