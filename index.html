@@ -522,6 +522,61 @@ table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;bo
 /* pastilles et rôles : police du texte, comme les étiquettes */
 .badge,.ps-role{font-family:var(--font-body);}
 .tabbar{max-width:100%;overflow-x:auto;}
+
+/* certifications : rangée « À la une » et groupes repliables */
+.feat-block{margin-bottom:40px;}
+.feat-label{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin:0 0 16px;font-family:var(--font-label);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--em-600);}
+.feat-label span{color:var(--text-400);font-weight:600;letter-spacing:0;text-transform:none;font-size:.92rem;}
+.feat-grid{display:grid;gap:20px;}
+.feat-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr));}
+.feat-grid.c3{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media(max-width:1100px){.feat-grid.c4,.feat-grid.c3{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:700px){.feat-grid.c4,.feat-grid.c3{grid-template-columns:1fr;}}
+.feat-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--em-500);border-radius:var(--radius-lg);padding:22px 22px 20px;display:flex;flex-direction:column;gap:9px;box-shadow:0 18px 34px -28px rgba(10,20,15,.4);transition:transform .25s,box-shadow .25s,border-color .25s;}
+.feat-card:hover{transform:translateY(-3px);box-shadow:0 26px 44px -26px rgba(10,20,15,.35);border-color:var(--em-400);}
+.feat-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px;}
+.feat-top .c-cat{margin-bottom:0;}
+.feat-date{font-size:.84rem;color:var(--text-400);font-weight:600;text-align:right;}
+.feat-card h3{font-size:1.16rem;line-height:1.25;color:var(--text-900);}
+.feat-card .c-org{font-size:.9rem;font-weight:600;color:var(--em-600);margin:0;}
+.feat-card .why{font-size:.95rem;color:var(--text-600);line-height:1.55;margin:0;}
+.feat-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
+.feat-chip{font-size:.78rem;font-weight:600;line-height:1.3;padding:4px 10px;border-radius:100px;border:1px solid rgba(14,157,107,.35);background:var(--em-100);color:var(--em-600);transition:all .2s;}
+.feat-chip:hover{background:var(--em-600);color:#fff;}
+.feat-foot{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+.feat-more{font-size:.88rem;font-weight:700;color:var(--text-600);}
+.feat-more:hover{color:var(--em-600);}
+.feat-all{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:8px;padding:20px 24px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);}
+.feat-all p{margin:0;color:var(--text-600);max-width:760px;}
+.feat-all p b{color:var(--text-900);}
+.all-h{font-size:1.7rem;margin:0 0 22px;color:var(--text-900);}
+.cert-group{grid-column:1/-1;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;}
+.cert-group>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;transition:background .2s;}
+.cert-group>summary::-webkit-details-marker{display:none;}
+.cert-group>summary:hover{background:var(--paper);}
+.cert-group>summary:focus-visible{outline:3px solid var(--em-500);outline-offset:-3px;}
+.g-title{display:block;font-family:var(--font-heading);font-weight:700;font-size:1.12rem;color:var(--text-900);}
+.g-sub{display:block;font-size:.9rem;color:var(--text-600);margin-top:3px;}
+.g-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.g-count{font-weight:700;font-size:.84rem;background:var(--ink-950);color:#fff;border-radius:100px;padding:5px 14px;white-space:nowrap;}
+.g-toggle{font-size:.88rem;font-weight:700;color:var(--em-600);white-space:nowrap;}
+.g-toggle::before{content:"Afficher ▾";}
+.cert-group[open] .g-toggle::before{content:"Masquer ▴";}
+.cert-group[open]>summary{border-bottom:1px solid var(--line);background:var(--paper);}
+.group-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:20px 24px 24px;}
+@media(max-width:900px){.group-grid{grid-template-columns:1fr;}.cert-group>summary{flex-direction:column;align-items:flex-start;}}
+.cert-group.hidden{display:none;}
+
+.feat-card .c-cat{display:inline-block;font-family:var(--font-label);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-950);background:var(--em-400);padding:5px 12px;border-radius:100px;}
+.feat-card .btn-proof{display:inline-flex;font-size:.9rem;font-weight:700;color:var(--ink-950);background:var(--em-400);padding:9px 16px;border-radius:9px;transition:all .2s;}
+.feat-card .btn-proof:hover{background:var(--em-600);color:#fff;}
+.feat-chip.static{cursor:default;background:var(--paper);border-color:var(--line);color:var(--text-600);}
+.feat-chip.static:hover{background:var(--paper);color:var(--text-600);}
+.feat-note{font-size:.84rem;color:var(--text-400);font-weight:600;}
+
+/* rangée data science : 2 colonnes, cartes plus larges et mieux remplies */
+.feat-grid.c4{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media(max-width:700px){.feat-grid.c4{grid-template-columns:1fr;}}
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
@@ -580,8 +635,8 @@ table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;bo
   <div class="wrap profil-grid">
     <div class="reveal">
       <div class="eyebrow"><span class="n">01</span> Profil</div>
-      <p class="profil-lead">Statisticien-économiste en formation, orienté finance, assurance et gestion des risques, avec plus de deux ans et demi d'expérience, dont le pilotage de la performance.</p>
-      <p>Élève ingénieur en 3ᵉ année à l'ENEAM (cycle ISE), je viens d'une Licence en Planification et Gestion des Projets obtenue avec la mention Très Bien (16,47/20). Mon socle : statistique, économétrie, programmation et bases de données.</p>
+      <p class="profil-lead">Élève ingénieur statisticien-économiste, avec plus de deux ans et demi d'expérience en analyse de données et en pilotage de la performance, je m'intéresse à la modélisation quantitative et à son application aux enjeux économiques, financiers et sociaux.</p>
+      <p>Mon objectif est de mobiliser les méthodes statistiques et économétriques pour éclairer la décision et contribuer à la résolution de problématiques concrètes. En 3ᵉ année à l'ENEAM (cycle ISE), je viens d'une Licence en Planification et Gestion des Projets obtenue avec la mention Très Bien (16,47/20). Mon socle : statistique, économétrie, programmation et bases de données.</p>
       <p>Chez ILYINE Paris (juin 2024 – août 2026), je suis passé de la gestion administrative au pilotage de la performance commerciale : suivi des KPI, tableaux de bord décisionnels et support stratégique à la direction. J'y ai appris à transformer des chiffres en décisions.</p>
       <p>Je consolide ce socle par des certifications reconnues (DataCamp, IBM SkillsBuild, World Bank OLC) et par la pratique : 2ᵉ place au Concours national de Risk Management de l'AMRAB, participation à Deep Learning IndabaX Bénin 2026, rôle de City Director bénévole pour SMILE MISSION (Linda Dominguez Foundation) à Porto-Novo, et 8 projets documentés en accès libre. Je prépare un master à l'horizon 2028.</p>
     </div>
@@ -785,263 +840,10 @@ table.rt{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;bo
     <div class="sec-head reveal">
       <div class="eyebrow"><span class="n">06</span> Reconnaissances</div>
       <h2>Certifications</h2>
-      <p>36 certifications et badges, chacun vérifiable en ligne ou consultable en PDF, et relié aux compétences qu'il a permis d'acquérir.</p>
+      <p>36 certifications et badges, chacun vérifiable en ligne ou consultable en PDF. Voici les sept à retenir ; la liste complète, avec les compétences acquises, est sur la page dédiée.</p>
     </div>
-    <div class="cert-filters" data-target="certGrid" role="group" aria-label="Filtrer"><button class="filter-btn active" data-filter="all" aria-pressed="true">Toutes</button><button class="filter-btn" data-filter="me" aria-pressed="false">Suivi-Évaluation</button><button class="filter-btn" data-filter="data" aria-pressed="false">Data, statistique &amp; BI</button><button class="filter-btn" data-filter="prog" aria-pressed="false">Informatique &amp; programmation</button><button class="filter-btn" data-filter="ai" aria-pressed="false">IA</button><button class="filter-btn" data-filter="tools" aria-pressed="false">Outils numériques</button><button class="filter-btn" data-filter="autre" aria-pressed="false">Langues</button></div>
-    <div class="cert-grid" id="certGrid">
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Science</span>
-        <h4>Associate Data Scientist</h4>
-        <div class="c-org">DataCamp</div>
-        <a class="c-skills" href="certifications.html#cert-dc-scientist">6 compétences acquises →</a>
-        <div class="foot"><span class="c-date">7 sept. 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/DataCamp-Associate-Data-Scientist.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Associate Data Analyst</h4>
-        <div class="c-org">DataCamp</div>
-        <a class="c-skills" href="certifications.html#cert-dc-analyst">4 compétences acquises →</a>
-        <div class="foot"><span class="c-date">24 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/DataCamp-Associate-Data-Analyst.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="me">
-        <span class="c-cat">Suivi-Évaluation</span>
-        <h4>Building Blocks of Effective National M&amp;E Systems</h4>
-        <div class="c-org">World Bank Group — Global Evaluation Initiative (OLC)</div>
-        <a class="c-skills" href="certifications.html#cert-wb-me">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">10 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/WorldBank-OLC-ME-Systems.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="me">
-        <span class="c-cat">Suivi-Évaluation</span>
-        <h4>MEAL dans les situations d'urgence</h4>
-        <div class="c-org">Humanitarian Leadership Academy (Kaya)</div>
-        <a class="c-skills" href="certifications.html#cert-kaya-meal">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">19 oct. 2023</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-MEAL-situations-urgence.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="me">
-        <span class="c-cat">Humanitaire</span>
-        <h4>Mettre sur pied et mener une opération humanitaire</h4>
-        <div class="c-org">Humanitarian Leadership Academy (Kaya)</div>
-        <a class="c-skills" href="certifications.html#cert-kaya-hum">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">26 oct. 2023</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-Operation-humanitaire.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Data Analytics Fluency Pathway</h4>
-        <div class="c-org">IBM SkillsBuild — parcours de 6 micro-certifications</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-path">6 compétences acquises →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/IBM-Data-Analytics-Fluency-Pathway.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Data Fundamentals</h4>
-        <div class="c-org">IBM SkillsBuild</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-fund">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/8727579b-473b-4ce1-ade9-244f37376ab0" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Data Collection and Analysis</h4>
-        <div class="c-org">IBM SkillsBuild</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-collect">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/e21b07fe-bc04-450d-9958-1b15f7989d34" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Data Preparation for Analysis</h4>
-        <div class="c-org">IBM SkillsBuild</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-prep">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/6ae54d1d-73ee-4038-a299-1d2d9f9d200f" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Data Classification</h4>
-        <div class="c-org">IBM SkillsBuild</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-class">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/b579ccd9-02c9-44f7-827d-9a119fbce756" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Data Visualization and Presentation</h4>
-        <div class="c-org">IBM SkillsBuild</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-viz">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/43372051-9892-4d35-bb21-1f82ebee1ad1" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Statistique</span>
-        <h4>Introduction to Inferential and Descriptive Statistics</h4>
-        <div class="c-org">IBM SkillsBuild</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-stats">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://www.credly.com/badges/ee269189-4f33-4971-b7c1-976ed4cf9103" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Excel Fundamentals for Data Analysis</h4>
-        <div class="c-org">Coursera — Macquarie University</div>
-        <a class="c-skills" href="certifications.html#cert-coursera-excel">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://coursera.org/verify/KA2RSGYNPVER" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-<article class="cert-card reveal" data-cat="prog">
-        <span class="c-cat">Programmation</span>
-        <h4>Python for Data Science, AI &amp; Development</h4>
-        <div class="c-org">Coursera — IBM</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-python">3 compétences acquises →</a>
-        <div class="foot"><span class="c-date">21 oct. 2026</span><a class="c-verify" href="https://coursera.org/verify/P7L3L9HQCLJU" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-<article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Science</span>
-        <h4>Databases and SQL for Data Science with Python</h4>
-        <div class="c-org">Coursera — IBM</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-sql">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">18 oct. 2026</span><a class="c-verify" href="https://coursera.org/verify/CUSEDKPSICAU" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-<article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Science</span>
-        <h4>Data Science Methodology</h4>
-        <div class="c-org">Coursera — IBM</div>
-        <a class="c-skills" href="certifications.html#cert-ibm-method">3 compétences acquises →</a>
-        <div class="foot"><span class="c-date">18 oct. 2026</span><a class="c-verify" href="https://coursera.org/verify/2H120V2B4B20" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-<article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Data Analytics</span>
-        <h4>Google Advanced Data Analytics Capstone</h4>
-        <div class="c-org">Coursera — Google</div>
-        <a class="c-skills" href="certifications.html#cert-google-capstone">3 compétences acquises →</a>
-        <div class="foot"><span class="c-date">20 août 2026</span><a class="c-verify" href="https://coursera.org/verify/3D8AJW042D18" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="prog">
-        <span class="c-cat">Programmation</span>
-        <h4>Intro to Programming</h4>
-        <div class="c-org">Kaggle</div>
-        <a class="c-skills" href="certifications.html#cert-kaggle-prog">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">20 janv. 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/Kaggle-Intro-to-Programming.png" target="_blank" rel="noopener">Voir le certificat ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="ai">
-        <span class="c-cat">IA Responsable</span>
-        <h4>Responsible AI</h4>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-resp">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Responsible-AI.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="ai">
-        <span class="c-cat">IA</span>
-        <h4>AI basics</h4>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-basics">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-AI-basics.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="ai">
-        <span class="c-cat">IA</span>
-        <h4>AI for all</h4>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-all">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-AI-for-all.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="ai">
-        <span class="c-cat">IA</span>
-        <h4>Generative AI</h4>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-gen">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Generative-AI.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="ai">
-        <span class="c-cat">Productivité</span>
-        <h4>Boost Your Productivity with Copilot</h4>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-copilot">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Boost-Productivity-Copilot.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Recherche</span>
-        <h4>Internet Search and beyond</h4>
-        <div class="c-org">MTN Skills Academy / Microsoft Learn</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-search">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">11 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Internet-Search-and-beyond.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="autre">
-        <span class="c-cat">Langue</span>
-        <h4>Test of English for University Purpose — niveau B2</h4>
-        <div class="c-org">Centre Béninois des Langues Étrangères, Université d'Abomey-Calavi</div>
-        <a class="c-skills" href="certifications.html#cert-cebelae">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">17 janv. 2024</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/CEBELAE-Test-of-English-B2.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="data">
-        <span class="c-cat">Business Intelligence</span>
-        <h4>Introducing SAP BusinessObjects BI Solutions</h4>
-        <div class="c-org">SAP Learning — niveau débutant</div>
-        <a class="c-skills" href="certifications.html#cert-sap-bo">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">29 sept. 2026</span><a class="c-verify" href="https://badger.learning.sap.com/verify/xapef-mygem-puban-micur-cufuh" target="_blank" rel="noopener">Vérifier le badge ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="prog">
-        <span class="c-cat">Programmation</span>
-        <h4>Code Yourself! An Introduction to Programming</h4>
-        <div class="c-org">Coursera — University of Edinburgh et Universidad ORT Uruguay</div>
-        <a class="c-skills" href="certifications.html#cert-cs-code">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://coursera.org/verify/YJN3KKDMEHYY" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="prog">
-        <span class="c-cat">Informatique</span>
-        <h4>IoT (Internet of Things) Wireless &amp; Cloud Computing Emerging Technologies</h4>
-        <div class="c-org">Coursera — Yonsei University</div>
-        <a class="c-skills" href="certifications.html#cert-cs-iot">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">19 août 2026</span><a class="c-verify" href="https://coursera.org/verify/FKL8QZQKA7QY" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Recherche d'information</span>
-        <h4>Basic Information Literacy</h4>
-        <div class="c-org">Coursera — The State University of New York (SUNY)</div>
-        <a class="c-skills" href="certifications.html#cert-cs-infolit">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">19 août 2026</span><a class="c-verify" href="https://coursera.org/verify/SE2DZR3QS7ND" target="_blank" rel="noopener">Vérifier sur Coursera ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Microsoft 365</span>
-        <h4>Getting Started With Microsoft 365</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-m365-start">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Getting-Started.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Microsoft 365</span>
-        <h4>Collaborating With Microsoft 365</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-m365-collab">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Collaborating.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Microsoft 365</span>
-        <h4>Managing Data With Microsoft 365</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-m365-data">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Managing-Data.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Microsoft 365</span>
-        <h4>Managing Projects with Microsoft 365</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-m365-projects">2 compétences acquises →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Managing-Projects.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Microsoft 365</span>
-        <h4>Optimising Your Work with Microsoft 365</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-m365-optimise">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-M365-Optimising-Work.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Travail collaboratif</span>
-        <h4>Working and collaborating online</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-online">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Working-Collaborating-Online.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-      <article class="cert-card reveal" data-cat="tools">
-        <span class="c-cat">Culture numérique</span>
-        <h4>Working With Computers and Devices</h4>
-        <div class="c-org">MTN Skills Academy / LinkedIn Learning</div>
-        <a class="c-skills" href="certifications.html#cert-mtn-devices">1 compétence acquise →</a>
-        <div class="foot"><span class="c-date">14 août 2026</span><a class="c-verify" href="https://github.com/Ariscoba001/certificats/blob/main/MTN-Working-With-Computers-Devices.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a></div>
-      </article>
-    </div>
+    <div class="feat-block"><div class="feat-label">Data science et analyse de données <span>4 certifications et parcours</span></div><div class="feat-grid c4"><article class="feat-card"><div class="feat-top"><span class="c-cat">Data science</span><span class="feat-date">7 sept. 2026</span></div><h3>Associate Data Scientist</h3><div class="c-org">DataCamp</div><p class="why">Python, machine learning et statistique inférentielle : ma certification la plus complète en data science.</p><div class="feat-chips"><span class="feat-chip static">Python</span><span class="feat-chip static">Machine learning</span><span class="feat-chip static">Inférence statistique</span><span class="feat-chip static">Évaluation de modèles</span><span class="feat-chip static">Visualisation</span></div><div class="feat-foot"><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/DataCamp-Associate-Data-Scientist.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a><a class="feat-more" href="certifications.html#cert-dc-scientist">Fiche détaillée →</a></div></article><article class="feat-card"><div class="feat-top"><span class="c-cat">Data analytics</span><span class="feat-date">24 août 2026</span></div><h3>Associate Data Analyst</h3><div class="c-org">DataCamp</div><p class="why">SQL, visualisation et analyse de données, avec un certificat numéroté et vérifiable.</p><div class="feat-chips"><span class="feat-chip static">SQL</span><span class="feat-chip static">Préparation des données</span><span class="feat-chip static">Visualisation</span><span class="feat-chip static">Statistiques descriptives</span></div><div class="feat-foot"><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/DataCamp-Associate-Data-Analyst.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a><a class="feat-more" href="certifications.html#cert-dc-analyst">Fiche détaillée →</a></div></article><article class="feat-card"><div class="feat-top"><span class="c-cat">Parcours</span><span class="feat-date">20 août à 21 oct. 2026</span></div><h3>Parcours IBM et Google sur Coursera</h3><div class="c-org">Coursera, IBM et Google</div><p class="why">Python, bases de données SQL, méthodologie de la data science et projet de synthèse Google.</p><div class="feat-chips"><a class="feat-chip" href="https://coursera.org/verify/P7L3L9HQCLJU" target="_blank" rel="noopener">Python (IBM) ↗</a><a class="feat-chip" href="https://coursera.org/verify/CUSEDKPSICAU" target="_blank" rel="noopener">SQL (IBM) ↗</a><a class="feat-chip" href="https://coursera.org/verify/2H120V2B4B20" target="_blank" rel="noopener">Méthodologie (IBM) ↗</a><a class="feat-chip" href="https://coursera.org/verify/3D8AJW042D18" target="_blank" rel="noopener">Capstone (Google) ↗</a></div><div class="feat-foot"><span class="feat-note">Vérification en ligne</span><a class="feat-more" href="certifications.html#cert-ibm-python">Fiche détaillée →</a></div></article><article class="feat-card"><div class="feat-top"><span class="c-cat">Parcours</span><span class="feat-date">11 août 2026</span></div><h3>Data Analytics Fluency Pathway</h3><div class="c-org">IBM SkillsBuild, parcours de 6 badges</div><p class="why">Six badges IBM : fondamentaux, collecte, préparation, classification, visualisation et statistiques.</p><div class="feat-chips"><a class="feat-chip" href="https://www.credly.com/badges/8727579b-473b-4ce1-ade9-244f37376ab0" target="_blank" rel="noopener">Fondamentaux ↗</a><a class="feat-chip" href="https://www.credly.com/badges/e21b07fe-bc04-450d-9958-1b15f7989d34" target="_blank" rel="noopener">Collecte ↗</a><a class="feat-chip" href="https://www.credly.com/badges/6ae54d1d-73ee-4038-a299-1d2d9f9d200f" target="_blank" rel="noopener">Préparation ↗</a><a class="feat-chip" href="https://www.credly.com/badges/b579ccd9-02c9-44f7-827d-9a119fbce756" target="_blank" rel="noopener">Classification ↗</a><a class="feat-chip" href="https://www.credly.com/badges/43372051-9892-4d35-bb21-1f82ebee1ad1" target="_blank" rel="noopener">Visualisation ↗</a><a class="feat-chip" href="https://www.credly.com/badges/ee269189-4f33-4971-b7c1-976ed4cf9103" target="_blank" rel="noopener">Statistiques ↗</a></div><div class="feat-foot"><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/IBM-Data-Analytics-Fluency-Pathway.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a><a class="feat-more" href="certifications.html#cert-ibm-path">Fiche détaillée →</a></div></article></div></div><div class="feat-block"><div class="feat-label">Évaluation des politiques publiques et langue <span>3 certifications</span></div><div class="feat-grid c3"><article class="feat-card"><div class="feat-top"><span class="c-cat">Évaluation</span><span class="feat-date">10 août 2026</span></div><h3>Building Blocks of Effective National M&amp;E Systems</h3><div class="c-org">World Bank Group, Global Evaluation Initiative (OLC)</div><p class="why">Mon certificat le plus directement lié à l'évaluation des politiques publiques : les composantes d'un système national de suivi-évaluation.</p><div class="feat-chips"><span class="feat-chip static">Systèmes nationaux de suivi-évaluation</span><span class="feat-chip static">Indicateurs et reporting</span></div><div class="feat-foot"><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/WorldBank-OLC-ME-Systems.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a><a class="feat-more" href="certifications.html#cert-wb-me">Fiche détaillée →</a></div></article><article class="feat-card"><div class="feat-top"><span class="c-cat">Évaluation</span><span class="feat-date">19 oct. 2023</span></div><h3>MEAL dans les situations d'urgence</h3><div class="c-org">Humanitarian Leadership Academy (Kaya)</div><p class="why">Suivi, évaluation, redevabilité et apprentissage (MEAL) appliqués aux situations d'urgence.</p><div class="feat-chips"><span class="feat-chip static">MEAL</span><span class="feat-chip static">Redevabilité</span><span class="feat-chip static">Apprentissage</span></div><div class="feat-foot"><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/Kaya-MEAL-situations-urgence.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a><a class="feat-more" href="certifications.html#cert-kaya-meal">Fiche détaillée →</a></div></article><article class="feat-card"><div class="feat-top"><span class="c-cat">Langue</span><span class="feat-date">17 janv. 2024</span></div><h3>Test of English for University Purpose, niveau B2</h3><div class="c-org">CEBELAE, Université d'Abomey-Calavi</div><p class="why">La preuve de mon niveau d'anglais B2, demandée par les dossiers de master.</p><div class="feat-chips"><span class="feat-chip static">Anglais académique</span><span class="feat-chip static">Niveau B2 du CECRL</span></div><div class="feat-foot"><a class="btn-proof" href="https://github.com/Ariscoba001/certificats/blob/main/CEBELAE-Test-of-English-B2.pdf" target="_blank" rel="noopener">Voir le PDF ↗</a><a class="feat-more" href="certifications.html#cert-cebelae">Fiche détaillée →</a></div></article></div></div>
+    <div class="feat-all reveal"><p><b>20 autres certificats</b> : 13 micro-certificats en IA et outils numériques (MTN Skills Academy et Microsoft 365), des cours Coursera, Kaggle et SAP, et une formation humanitaire. Tous restent consultables et vérifiables.</p><a class="btn-proof" href="certifications.html">Voir les 36 certificats →</a></div>
     <div class="cert-more"><a class="btn btn-ghost-d" href="certifications.html">Voir toutes les compétences acquises →</a></div>
   </div>
 </section>
